@@ -4,7 +4,7 @@ export const KEY_SEARCH = {
 };
 
 export const PAGINATION = {
-    LIMIT: 4,
+    LIMIT: 2,
     CURRENT_PAGE: 1,
     TOTAL_PAGE: 0,
-};
+};  

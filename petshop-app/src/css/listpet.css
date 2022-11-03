@@ -22,6 +22,7 @@
   width: 90%;
   height: fit-content;
 }
+
 .card_pet:hover {
   transform: scale(1.1);
 }

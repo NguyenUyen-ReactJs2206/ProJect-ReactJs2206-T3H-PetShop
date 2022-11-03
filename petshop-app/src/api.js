@@ -169,7 +169,7 @@ export const listPets = [
           {
             name: "BRITISH LONGHAIR MẮT 2 MÀU",
             priceOld: 20000000,
-            priceCurrent:19000000,
+            priceCurrent: 19000000,
             url: "https://dogily.vn/wp-content/uploads/2022/06/ald-hai-mau-mat-duc-2.png",
           },
           {
@@ -180,7 +180,7 @@ export const listPets = [
           {
             name: "BRITISH LONGHAIR SIÊU ĐẸP",
             priceOld: 17000000,
-            priceCurrent:16000000,
+            priceCurrent: 16000000,
             url: "https://i.pinimg.com/736x/93/22/56/932256b3ca3f8966526683cf01cbc964.jpg",
           },
           {
@@ -191,7 +191,7 @@ export const listPets = [
           {
             name: "BRITISH LONGHAIR ĐÁNG YÊU",
             priceOld: 16500000,
-            priceCurrent:14500000,
+            priceCurrent: 14500000,
             url: "https://www.thukieng.com/wp-content/uploads/2021/06/alnt9-300x300.jpg",
           },
           {
@@ -202,7 +202,7 @@ export const listPets = [
           {
             name: "BRITISH LONGHAIR SIÊU XỊN",
             priceOld: 17000000,
-            priceCurrent:15000000,
+            priceCurrent: 15000000,
             url: "https://file.hstatic.net/200000108863/file/1_78c5c64d1ac14c80922efd9f0df2e830_grande.png",
           },
         ],
@@ -217,7 +217,7 @@ export const listPets = [
           {
             name: "MUNCHKIN DỄ THƯƠNG",
             priceOld: 10000000,
-            priceCurrent:9000000,
+            priceCurrent: 9000000,
             url: "https://azpet.b-cdn.net/wp-content/uploads/2021/07/Munchkin-Trang-M12208-2-375x375.jpg",
           },
           {
@@ -228,7 +228,7 @@ export const listPets = [
           {
             name: "MUNCHKIN NGẦU",
             priceOld: 18000000,
-            priceCurrent:17000000,
+            priceCurrent: 17000000,
             url: "https://dogily.vn/wp-content/uploads/2021/09/meo-chan-ngan-tai-cup-xam-xanh.jpg",
           },
           {
@@ -244,7 +244,7 @@ export const listPets = [
           {
             name: "MUNCHKIN NÂU",
             priceOld: 13000000,
-            priceCurrent:11000000,
+            priceCurrent: 11000000,
             url: "https://thegioiloaimeo.com/wp-content/uploads/2020/02/meo-munchkin2.jpg",
           },
           {
@@ -255,7 +255,7 @@ export const listPets = [
           {
             name: "MUNCHKIN SIÊU XINH",
             priceOld: 12000000,
-            priceCurrent:10000000,
+            priceCurrent: 10000000,
             url: "https://azpet.b-cdn.net/wp-content/uploads/2021/07/Munchkin-Socola-M12143-1-1024x1024.jpg",
           },
           {

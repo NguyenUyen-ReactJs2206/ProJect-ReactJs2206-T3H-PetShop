@@ -2,16 +2,25 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import ".././css/listpet.css";
+import PaginationCpn from "./PaginationCpn";
 
-export default function ListDog({ pets }) {
-  console.log("pest file ListDog", pets);
+export default function ListDog({
+  petPage,
+  onChangePage,
+  totalPage,
+  currentPage,
+}) {
+  console.log("pest file ListDog", petPage);
   return (
     <div>
-      <div>
+      <h3>List Dog</h3>
+      <div> 
         <div className="container-fluid show-card">
           <h6></h6>
           <div className="row">
-            {pets[0]?.dogs[0]?.alaska.map((item, index) => (
+            {petPage?.map((item, index) => {
+              console.log("item",item)
+              return(
               <Card
                 key={index}
                 className="col-xl-3 col-lg-3 col-sm-6 col-6 cards"
@@ -36,9 +45,14 @@ export default function ListDog({ pets }) {
                     <Button variant="primary">Buy Now</Button>
                   </Card.Body>
                 </Card>
-              </Card>
-            ))}
-            {pets[0]?.dogs[1]?.poodle.map((item, index) => (
+              </Card>)
+            })}
+            <PaginationCpn
+              onChangePage={onChangePage}
+              totalPage={totalPage}
+              currentPage={currentPage}
+            />
+            {petPage?.dogs?.poodle.map((item, index) => (
               <Card
                 key={index}
                 className="col-xl-3 col-lg-3 col-sm-6 col-6 cards"

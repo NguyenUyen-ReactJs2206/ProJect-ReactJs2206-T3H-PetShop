@@ -7,4 +7,4 @@ export default function Cats({allPet}) {
       <ListCat pets={allPet}/>
     </div>
   )
-}
+} 

@@ -10,5 +10,5 @@ export default function InputDog({onSearchPet}) {
     className="w-2/4 mr-2"
     onChange={onSearchPet}
   />
-  )
+  ) 
 }

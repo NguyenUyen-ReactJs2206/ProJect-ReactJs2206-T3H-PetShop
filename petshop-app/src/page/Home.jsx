@@ -7,7 +7,7 @@ export default function Home({allPet}) {
   return (
     <div>
       <Banner />
-      <PetSaleUp  pets={allPet}/>
+      <PetSaleUp  allPet={allPet}/> 
     </div>
   );
 }

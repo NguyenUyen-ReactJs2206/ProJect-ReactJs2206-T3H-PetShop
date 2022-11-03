@@ -5,7 +5,7 @@ import ".././css/listpet.css"
 
 export default function ListCat({pets}) {
   return (
-    <div>
+    <div> 
       <div>
         <div className="container-fluid show-card">
           <div className="row">

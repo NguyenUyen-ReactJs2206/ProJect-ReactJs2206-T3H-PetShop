@@ -14,6 +14,6 @@ export default function DropdowSelectInput({title, petSearch, onSelect }) {
         ))}
       </Dropdown.Menu>
     </Dropdown>
-  )
+  ) 
 }
 
