@@ -1,15 +1,14 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
-import ".././css/listpet.css"
+import { Button, Card } from 'react-bootstrap'
 
-export default function ListCat({pets}) {
+export default function PetSaleUp({listDog,listCat}) {
   return (
-    <div> 
+    <div>
       <div>
         <div className="container-fluid show-card">
           <div className="row">
-            {pets[0]?.cats[0]?.britishLonghair
+            {listDog
+              .filter((item) => item.priceOld != null)
               .map((item, index) => (
                 <Card
                   key={index}
@@ -31,7 +30,7 @@ export default function ListCat({pets}) {
                         </span>
                         <br />
                         <span className="card_pet-newprice">
-                          Giá hiện tại: {item.priceCurrent} (VNĐ) 
+                          Giá hiện tại: {item.priceCurrent} (VNĐ)
                         </span>
                       </Card.Text>
                       <Button variant="primary">Buy Now</Button>
@@ -39,7 +38,15 @@ export default function ListCat({pets}) {
                   </Card>
                 </Card>
               ))}
-            {pets[0]?.cats[1]?.munchkin
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="container-fluid show-card">
+          <div className="row">
+            {listCat
+              .filter((item) => item.priceOld != null)
               .map((item, index) => (
                 <Card
                   key={index}
@@ -57,7 +64,7 @@ export default function ListCat({pets}) {
                       </Card.Title>
                       <Card.Text>
                         <span className="card_pet-oldprice">
-                          {item.priceOld}
+                          {item.priceOld} 
                         </span>
                         <br />
                         <span className="card_pet-newprice">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import imageLogo from ".././img/logoPetShop.jpg";
+import imageLogo from ".././image/logoPetShop.jpg";
 import ".././css/navbar.css";
 import { FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
 
@@ -31,7 +31,7 @@ export default function Navbar() {
               </div>
               <div className="nav-item menu-item">
                 <Link to={"/order"} className="nav-link">
-                  ORDER
+                  CHECKOUT
                 </Link>
               </div>
             </div>

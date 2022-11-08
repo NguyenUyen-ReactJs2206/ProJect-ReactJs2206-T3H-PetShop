@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import PetShop from './PetShop';
-import Banner from './component/Banner';
+import PetShop from './MyApp-PetShop/PetShop';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,8 +10,7 @@ root.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>
-  <PetShop/>
-
+<PetShop/>
 );
 
 // If you want to start measuring performance in your app, pass a function
