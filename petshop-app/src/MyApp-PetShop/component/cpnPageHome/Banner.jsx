@@ -1,10 +1,10 @@
 import { Carousel } from "react-bootstrap";
 import React from "react";
-import ".././css/banner.css";
+import "../.././css/slide.css";
 
 export default function Banner() {
   return (
-    <Carousel>
+    <Carousel className="banner_slide">
       <Carousel.Item interval={3000}>
         <img
           className="d-block slide_baner-image"

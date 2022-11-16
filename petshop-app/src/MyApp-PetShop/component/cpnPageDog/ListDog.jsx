@@ -1,28 +1,21 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import ".././css/listpet.css";
-import PaginationDog from "./PaginationDog";
+import "../.././css/listpet.css";
 
 export default function ListDog({
-  dogPage,
-  onChangePageDog,
-  totalPageDog,
-  currentPageDog,
+ dogs,
+  onClickAddCart
 }) {
   return (
-    <div>
-      <h3>List Dog</h3>
-      <div>
-        <div className="container-fluid show-card">
+        <div className="container show-card">
           <div className="row">
-            {dogPage.map((item, index) => {
+            {dogs.map((item, index) => {
               console.log("item", item);
               return (
                 <Card
                   key={index}
-                  className="col-xl-3 col-lg-3 col-sm-6 col-6 cards"
+                  className="col-xl-3 col-lg-3 col-sm-4 col-6 cards card_pet"
                 >
-                  <Card className="card_pet">
                     <Card.Img
                       className="card_pet-image"
                       variant="top"
@@ -38,23 +31,15 @@ export default function ListDog({
                         </span>
                         <br />
                         <span className="card_pet-newprice">
-                          Giá hiện tại: {item.priceCurrent} (VNĐ)
+                          Price Current: {item.priceCurrent} (VNĐ)
                         </span>
                       </Card.Text>
-                      <Button variant="primary">Buy Now</Button>
+                      <Button variant="primary" onClick={()=>onClickAddCart(item)}>Add to cart</Button>
                     </Card.Body>
                   </Card>
-                </Card>
               );
             })}
-            <PaginationDog
-              onChangePageDog={onChangePageDog}
-              totalPageDog={totalPageDog}
-              currentPageDog={currentPageDog}
-            />
           </div>
         </div>
-      </div>
-    </div>
   );
 }

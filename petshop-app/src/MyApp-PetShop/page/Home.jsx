@@ -1,13 +1,16 @@
 import React from "react";
-import { listCat, listDog } from "../api";
-import Banner from "../component/Banner";
-import PetSaleUp from "../component/PetSaleUp";
+import Banner from "../component/cpnPageHome/Banner";
+import ".././css/home.css";
+// import AllPet from "../component/cpnPageHome/AllPet";
+import AllDog from "../component/cpnPageHome/dog/AllDog";
+import AllCat from "../component/cpnPageHome/cat/AllCat";
 
-export default function Home() {
+export default function Home({ onClickAddCart }) {
   return (
-    <div>
+    <div className="home-page">
       <Banner />
-      <PetSaleUp listDog={listDog} listCat={listCat} />
+      <AllDog onClickAddCart={onClickAddCart} />
+      <AllCat onClickAddCart={onClickAddCart} />
     </div>
   );
 }

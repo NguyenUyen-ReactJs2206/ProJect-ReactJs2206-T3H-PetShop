@@ -1,14 +1,13 @@
 import React from "react";
-import { Button, Dropdown } from "react-bootstrap";
-import ".././css/searchDog.css";
+import { Dropdown } from "react-bootstrap";
+import "../.././css/search.css";
 
 export default function SearchCat({
   onSearchCat,
   inputCat,
-  setCats,
-  listCat,
-  menuCat,
-  filterCat,
+  menuCats,
+  selectedCat,
+  onSelectCat,
 }) {
   return (
     <div>
@@ -28,24 +27,17 @@ export default function SearchCat({
 
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-             All
+            {selectedCat}
             </Dropdown.Toggle>
-
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-3" onClick={() => setCats(listCat)}>
-                All
-              </Dropdown.Item>
-              {menuCat.map((Val, id) => {
-                return (
-                  <Dropdown.Item
-                    href="#/action-3"
-                    onClick={() => filterCat(Val)}
-                    key={id}
-                  >
-                    {Val}
-                  </Dropdown.Item>
-                );
-              })}
+              {menuCats.length > 0 &&
+                menuCats.map((Val, id) => {
+                  return (
+                    <Dropdown.Item onClick={() => onSelectCat(Val)} key={id}>
+                      {Val}
+                    </Dropdown.Item>
+                  );
+                })}
             </Dropdown.Menu>
           </Dropdown>
         </div>

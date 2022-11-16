@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+.page-user {
+  padding-top: 70px;
+  text-align: end;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.page-user a {
+  margin: 20px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: larger;
+}
+.page-user a:hover {
+  color: rgb(255, 147, 6);
+}
+.form-login {
+  /* background-color: red; */
+  background-size: cover;
+  /* full backgroud*/
+  background-position: center;
+  width: 80%;
+  object-fit: cover;
+  background-image: linear-gradient(
+      to left top,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(66, 199, 247, 0.666)
+    ),
+    url("../image/backgroundUser.jpg");
+}
+
+.form-login-email,
+.form-login-password {
+  width: 100%;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* ngang hàng */
+  display: flex;
+}
+section .form-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+section .form-content .form {
+  width: 50%;
+}
+section .form-content .form h2 {
+  color: rgb(255, 123, 28, 0.7);
+  font-weight: 600;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid rgb(247, 119, 0, 0.7);
+  /* gạch chân vừa với chữ */
+  display: inline-block;
+  /* khoảng cách giữa các chữ */
+  letter-spacing: 1px;
+}
+section .form-content .form .input-form {
+  margin-bottom: 20px;
+}
+section .form-content .form .input-form span {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: rgb(245, 242, 242, 0.9);
+  letter-spacing: 1px;
+}
+section .form-content .form .input-form input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid rgb(255, 123, 0);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgb(245, 242, 242, 0.9);
+  background: transparent;
+  border-radius: 20px;
+}
+section .form-content .form .input-form input[type="submit"] {
+  background: rgb(255, 123, 0, 0.8);
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+section .form-content .form .input-form input[type="submit"]:hover {
+  background: rgb(246, 106, 7);
+}
+section .form-content .form .remember-to-login {
+  margin-bottom: 10px;
+  color: rgb(245, 242, 242, 0.9);
+  font-size: 14px;
+}
+section .form-content .form .input-form p {
+  color: rgb(245, 242, 242, 0.9);
+}
+section .form-content .form .input-form p a {
+  color: rgb(246, 106, 7);
+}
+section .form-content .form h3 {
+  color:  rgb(245, 242, 242, 0.8);
+  text-align: center;
+  margin: 30px 0 10px;
+  font-weight: 500;
+}
+section .form-content .form .icon-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .form-content .form .icon-login li {
+  list-style: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+section .form-content .form .icon-login li:nth-child(1) {
+  color: #3b5999;
+}
+section .form-content .form .icon-login li:nth-child(2) {
+  color: #2f7beb;
+}
+section .form-content .form .icon-login li:nth-child(4) {
+  color: #55acee;
+}
+
+@media (max-width: 768px) {
+  /* section .img-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    } */
+  section .form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  section .form-content .form {
+    width: 100%;
+    padding: 40px;
+    background: rgba(255 255 255 / 0.9);
+    margin: 50px;
+  }
+  section .form-content .form .input-form span,
+  section .form-content .form .remember-to-login,
+  section .form-content .form .input-form p {
+    color: black;
+  }
+  section .form-content .form .input-form input {
+    color: black;  }
+  section .form-content .form h3 {
+    color: #607d8b;
+    text-align: center;
+    margin: 30px 0 10px;
+    font-weight: 500;
+  }
+}

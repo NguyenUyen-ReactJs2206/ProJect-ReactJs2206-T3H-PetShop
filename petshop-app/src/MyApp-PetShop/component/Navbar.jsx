@@ -2,61 +2,94 @@ import React from "react";
 import { Link } from "react-router-dom";
 import imageLogo from ".././image/logoPetShop.jpg";
 import ".././css/navbar.css";
-import { FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
+import { FaAngleDown, FaCartPlus, FaSearch, FaUser } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar({
+  menuDogs,
+  onSelectDog,
+  menuCats,
+  onSelectCat,
+  countCartItems,
+}) {
   return (
-    <div>
-      <div className="container-fluid header bg-light p-2">
-        <div className="row row-navbar">
-          <div className="logo-petshop col-xl-3 col-lg-3 col-md-2 col-sm-2 col-12 ">
-            <Link to={"/"} className="nav-link"> <img src={imageLogo} alt="logo" className="logo" /></Link>
-          </div>
-          <div className="navbar-menu col-xl-6 col-lg-6 col-md-6 col-sm-6 col-8">
-            <div className=" navbar menu">
-              <div className="nav-item menu-item">
-                <Link to="/home" className="menu -link nav-link">
-                  HOME
-                </Link> 
-              </div>
-              <div className="nav-item menu-item">
-                <Link to={"/dogs"} className="nav-link">
-                  DOGS
-                </Link>
-              </div>
-              <div className="nav-item menu-item">
-                <Link to={"/cats"} className="nav-link">
-                  CATS
-                </Link>
-              </div>
-              <div className="nav-item menu-item">
-                <Link to={"/order"} className="nav-link">
-                  CHECKOUT
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="nav-icons col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
-            <div className="icon-item">
-              <Link>
-                <FaCartPlus className="cart-shopping" />
+    <div className="container-fuid">
+      <div id="header">
+        <nav>
+          <Link to="/" id="logo">
+            <img src={imageLogo} alt="logopetshop" />
+          </Link>
+          <ul id="main-menu">
+            <li>
+              <Link to="/home">HOME</Link>
+            </li>
+            <li>
+              <Link to="/dogs">
+                DOGS
+                <span>
+                  <FaAngleDown />
+                </span>
+              </Link>
+              <ul className="sub-menu">
+                {menuDogs.map((Val) => (
+                  <li>
+                    <Link to={`/dogs/${Val}`} onClick={() => onSelectDog(Val)}>
+                      {Val}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <Link to="/cats">
+                CATS{" "}
+                <span>
+                  <FaAngleDown />
+                </span>
               </Link>
 
-              <span className="cart-number">0</span>
-            </div>
-            <div className="icon-item">
-              <Link>
+              <ul className="sub-menu">
+                {menuCats.map((Val) => (
+                  <li>
+                    <Link to={`/cats/${Val}`} onClick={() => onSelectCat(Val)}>
+                      {Val}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <Link to="/about-us">ABOUT US</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/cart">
+                <FaCartPlus className="cart-shopping" />
+                {countCartItems ? (
+                  <>
+                    <span className="count-cart-shopping">
+                      {countCartItems}
+                    </span>
+                  </>
+                ) : (
+                  " "
+                )}
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/user">
                 <FaUser className="icon-user" />
               </Link>
-            </div>
-            <div className="icon-item">
+            </li>
+
+            <li>
               <Link>
                 {" "}
                 <FaSearch className="icon-search" />
               </Link>
-            </div>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

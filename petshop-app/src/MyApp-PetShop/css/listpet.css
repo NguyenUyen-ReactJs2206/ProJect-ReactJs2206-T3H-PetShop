@@ -3,36 +3,33 @@
   margin: auto;
   padding: 0;
 }
-.show-card {
-  width: 90%;
-  height: 100%;
-  margin-top: 30px;
-  border: none;
-  margin-bottom: 50px;
+.container {
+  max-width: 1140px;
 }
+
 .cards {
-  border: none;
+  border:1px solid white;
 }
 .card_pet {
   transform: scale(1);
   transition: all 0.5s;
-  margin: 20px;
+  margin-top: 20px;
   background-color: #1c1b29;
   border-radius: 20px;
-  width: 90%;
   height: fit-content;
 }
 .card_pet:hover {
   transform: scale(1.1);
 }
 .card_pet-image {
-  height: 260px;
+  height: 200px;
   border-radius: 20px;
 }
 .card_pet-name {
   color: rgb(36, 200, 255);
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
+  height: 30px;
 }
 .card_pet-oldprice {
   text-decoration: line-through;
