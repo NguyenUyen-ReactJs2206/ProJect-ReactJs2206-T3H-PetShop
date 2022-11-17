@@ -57,7 +57,7 @@ export default function AllDog({ onClickAddCart }) {
       });
     }
   };
-
+ 
   //Sort by price
   const onHandleSortPrice = (value) => {
     let listDogSort = [...listDog];
@@ -84,7 +84,7 @@ export default function AllDog({ onClickAddCart }) {
       totalPageDog: Math.ceil(resultSortDog.length / PAGINATION_DOG.LIMIT_DOG),
     });
   };
-
+ 
   //Divide data by each element
   const onChangePageDog = (currentPageDog) => {
     setPaginationDog((pre) => ({

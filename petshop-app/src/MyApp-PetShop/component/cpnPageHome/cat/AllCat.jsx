@@ -3,18 +3,18 @@ import { Button, Card } from "react-bootstrap";
 import { listCat } from "../../../api";
 import { PAGINATION_CAT } from "../../../helper/constants";
 import PaginationCat from "./PaginationCat";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Input = styled.input`
- border: 1px solid none;
-border-radius: 2px;
-margin-right:10px;
-padding:5px;
+  border: 1px solid none;
+  border-radius: 2px;
+  margin-right: 10px;
+  padding: 5px;
 `;
 const Select = styled.select`
- border: 1px solid none;
-border-radius: 2px;
-padding:5px;
+  border: 1px solid none;
+  border-radius: 2px;
+  padding: 5px;
 `;
 export default function AllCat({ onClickAddCart }) {
   const [cats, setCats] = useState([...listCat]);
@@ -57,7 +57,7 @@ export default function AllCat({ onClickAddCart }) {
       });
     }
   };
-
+  
   const onHandleSortPrice = (value) => {
     let listCatSort = [...listCat];
     let resultSortCat = [];
