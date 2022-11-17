@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .page-cat {
+    background-image: linear-gradient(to left top,
+    rgba(39, 238, 232, 0.5) 40%,
+    rgba(81, 207, 252, 0.5)),url("../image/banner2.jpg");
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  /* full backgroud*/
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+
+  .page-cat h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: rgb(9, 92, 103);
+    padding-top: 150px;
+    padding-left: 100px;
+  }

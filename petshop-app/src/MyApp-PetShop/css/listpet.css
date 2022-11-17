@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+}
+.container {
+  max-width: 1140px;
+}
+
+.cards {
+  border:1px solid white;
+}
+.card_pet {
+  transform: scale(1);
+  transition: all 0.5s;
+  margin-top: 20px;
+  background-color: #1c1b29;
+  border-radius: 20px;
+  height: fit-content;
+}
+.card_pet:hover {
+  transform: scale(1.1);
+}
+.card_pet-image {
+  height: 200px;
+  border-radius: 20px;
+}
+.card_pet-name {
+  color: rgb(36, 200, 255);
+  font-size: 14px;
+  text-align: center;
+  height: 30px;
+}
+.card_pet-oldprice {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+.card_pet-newprice {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+

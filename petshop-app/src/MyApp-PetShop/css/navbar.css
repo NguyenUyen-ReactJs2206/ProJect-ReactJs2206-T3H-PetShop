@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: auto;
+  margin: 0px auto;
+}
+#header {
+  background-color: black;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  
+}
+nav {
+  /** cho 2 thằng ngang hàng*/
+  display: flex;
+  /** đẩy 2 thằng ra 2 bên*/
+  justify-content: space-between;
+  justify-items: center;
+}
+#logo {
+  padding: 5px 0px;
+}
+#logo img {
+  max-width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+#main-menu {
+  display: flex;
+  /* mất mấy cái dấu  chấm trước list*/
+  list-style: none;
+}
+
+#main-menu li a {
+  color: #f8f8f8;
+  /* có thể tác động đc */
+  display: block;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* bỏ dấu gạch chân ở dưới*/
+  text-decoration: none;
+}
+#main-menu li {
+  /* cha của thằng dưới để làm chuẩn */
+  position: relative;
+  margin-top: 10px;
+}
+#main-menu ul.sub-menu {
+  /* để có thể trồi nổi ko dính với header*/
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  list-style: none;
+  padding: 0px;
+  margin-top: 9px;
+  width: 200px;
+  /* đầu tiên nó ẩn */
+  display: none;
+}
+#main-menu li:hover ul.sub-menu {
+  display: block;
+}
+
+#main-menu ul.sub-menu li {
+  border-bottom: 1px solid rgb(109, 108, 108);
+}
+#main-menu ul.sub-menu li:hover {
+  border-bottom: 2px solid rgb(172, 172, 172);
+}
+#main-menu ul.sub-menu a {
+  padding: 5px;
+  padding-left: 2px;
+  margin: 10px;
+}
+#main-menu ul.sub-menu li:hover a {
+  color: rgb(255, 0, 0);
+}
+/* Thiết lập khi hover */
+#main-menu > li > a {
+  position: relative;
+}
+#main-menu > li > a::before {
+  content: "";
+  height: 3px;
+  width: 0px;
+  background-color: red;
+  position: absolute;
+  bottom: -8px;
+  left: 0px;
+  /* kiểu hiệu ứng tính bằng giây */
+  transition: 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#main-menu > li:hover > a::before {
+  width: 100%;
+}
+.cart-shopping {
+  width: 30px;
+  height: 20px;
+}
+.count-cart-shopping {
+position: absolute;
+border: 1px solid red;
+border-radius: 50%;
+width: 30px;
+height: 28px;
+text-align: center;
+background-color: red;
+font-size: 16px;
+margin-top: -20px;
+margin-left: -20px;
+}
