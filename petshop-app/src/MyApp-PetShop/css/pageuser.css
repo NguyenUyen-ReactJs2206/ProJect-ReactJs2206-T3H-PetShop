@@ -54,7 +54,7 @@ section .form-content {
   height: 100%;
 }
 section .form-content .form {
-  width: 50%;
+  width: 80%;
 }
 section .form-content .form h2 {
   color: rgb(255, 123, 28, 0.7);
@@ -69,7 +69,7 @@ section .form-content .form h2 {
   letter-spacing: 1px;
 }
 section .form-content .form .input-form {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 section .form-content .form .input-form span {
   font-size: 16px;
@@ -115,7 +115,7 @@ section .form-content .form .input-form p a {
   color: rgb(246, 106, 7);
 }
 section .form-content .form h3 {
-  color:  rgb(245, 242, 242, 0.8);
+  color: rgb(245, 242, 242, 0.8);
   text-align: center;
   margin: 30px 0 10px;
   font-weight: 500;
@@ -152,13 +152,6 @@ section .form-content .form .icon-login li:nth-child(4) {
 }
 
 @media (max-width: 768px) {
-  /* section .img-bg{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    } */
   section .form-content {
     display: flex;
     justify-content: center;
@@ -175,11 +168,13 @@ section .form-content .form .icon-login li:nth-child(4) {
   }
   section .form-content .form .input-form span,
   section .form-content .form .remember-to-login,
+  section .form-content .form .remember-to-signup,
   section .form-content .form .input-form p {
     color: black;
   }
   section .form-content .form .input-form input {
-    color: black;  }
+    color: black;
+  }
   section .form-content .form h3 {
     color: #607d8b;
     text-align: center;

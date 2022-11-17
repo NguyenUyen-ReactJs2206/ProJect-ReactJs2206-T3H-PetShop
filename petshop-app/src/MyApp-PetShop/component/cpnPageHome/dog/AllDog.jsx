@@ -16,7 +16,7 @@ const Select = styled.select`
   border-radius: 2px;
   padding: 5px;
 `;
-export default function AllDog({ onClickAddCart }) {
+export default function AllDog({ onClickAddCart, onHandleShowInfomation}) {
   const [dogs, setDogs] = useState([...listDog]);
   //Search for All Dog
   const [inputFilterDog, setInputFilterDog] = useState("");
@@ -24,18 +24,19 @@ export default function AllDog({ onClickAddCart }) {
   const [dogPage, setDogPage] = useState(
     listDog.slice(0, PAGINATION_DOG.LIMIT_DOG)
   );
+
   // Total item: 24 => 6 page, 1page inclue 4 item   => totalPage = Math.ceil(listCat.length/limit)
   const [paginationDog, setPaginationDog] = useState({
     totalPageDog: Math.ceil(listDog.length / PAGINATION_DOG.LIMIT_DOG),
     currentPageDog: PAGINATION_DOG.CURRENT_PAGE_DOG,
   });
-  //Search and Filter Dog - Bị chậm vài nhịp
+  //Search and Filter Dog
   const onHandleSearchDog = (keySearchFilter) => {
     setInputFilterDog(keySearchFilter);
 
     let listDogFilter = [...listDog];
     let resultFilterDog = [];
-    if (inputFilterDog === "") {
+    if (keySearchFilter === "") {
       setDogs(listDog);
       setPaginationDog({
         ...paginationDog,
@@ -43,9 +44,11 @@ export default function AllDog({ onClickAddCart }) {
         totalPageDog: Math.ceil(listDog.length / PAGINATION_DOG.LIMIT_DOG),
       });
     }
-    if (inputFilterDog) {
+    if (keySearchFilter) {
       resultFilterDog = listDogFilter.filter((element) => {
-        return element.name.toLocaleLowerCase().includes(inputFilterDog);
+        return element.name
+          .toLocaleUpperCase()
+          .includes(keySearchFilter.toLocaleUpperCase());
       });
       setDogs(resultFilterDog);
       setPaginationDog({
@@ -115,7 +118,7 @@ export default function AllDog({ onClickAddCart }) {
             value={inputFilterDog}
             onChange={(e) => onHandleSearchDog(e.target.value)}
           />
-          <Select
+          <Select 
             className="select-by-price"
             onChange={(e) => onHandleSortPrice(e.target.value)}
           >
@@ -128,29 +131,36 @@ export default function AllDog({ onClickAddCart }) {
       <div className="container show-card">
         <div className="row ">
           {dogPage.map((item, index) => (
-            <Card
-              key={index}
-              className="col-xl-3 col-lg-3 col-sm-6 col-6 cards card_pet"
-            >
-              <Card.Img
-                className="card_pet-image"
-                variant="top"
-                src={item.url}
-              />
-              <Card.Body>
-                <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                <Card.Text>
-                  <span className="card_pet-oldprice">{item.priceOld}</span>
-                  <br />
-                  <span className="card_pet-newprice">
-                    Price Current: {item.priceCurrent}đ
-                  </span>
-                </Card.Text>
-                <Button variant="primary" onClick={() => onClickAddCart(item)}>
-                  Add to cart
-                </Button>
-              </Card.Body>
-            </Card>
+            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+              <Card
+                key={index}
+                onClick={()=>onHandleShowInfomation(item)}
+                className="card_pet"
+              >
+                <Card.Img
+                  className="card_pet-image"
+                  variant="top"
+                  src={item.url}
+                />
+                <Card.Body>
+                  <Card.Title className="card_pet-name">{item.name}</Card.Title>
+                  <Card.Text className="card-text_pet">
+                    <span className="card_pet-oldprice">{item.priceOld}</span>
+                    <br />
+                    <span className="card_pet-newprice">
+                      Price Current: {item.priceCurrent}$
+                    </span>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Button
+                variant="primary"
+                onClick={() => onClickAddCart(item)}
+                className="button-add-to-cart"
+              >
+                Add to cart
+              </Button>
+            </div>
           ))}
           <PaginationDog
             onChangePageDog={onChangePageDog}

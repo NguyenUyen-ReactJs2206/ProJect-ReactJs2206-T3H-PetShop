@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { FaRemoveFormat, FaTrash } from "react-icons/fa";
 import "../../css/pagecart.css";
 import Checkout from "./Checkout";
 
@@ -18,7 +19,7 @@ export default function ShopCart({
       {showContent ? (
         <div className="container-fluid checkout-cart">
           <div className="checkout-cart-title">
-            <h3 >PAYMENT ORDER</h3>
+            <h3>PAYMENT ORDER</h3>
           </div>
           <div className="row box-checkout-cart">
             <div className="checkout-cart-left col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 ">
@@ -94,14 +95,10 @@ export default function ShopCart({
                           <b>{totalMoney}đ</b>
                         </td>
                         <td className="cart-item-remove">
-                          <button
+                          <FaTrash
                             className="item-remove"
-                            onClick={() => {
-                              handleRemove(item);
-                            }}
-                          >
-                            Remove
-                          </button>
+                            onClick={() => handleRemove(item)}
+                          />
                         </td>
                       </tr>
                     );
@@ -129,21 +126,20 @@ export default function ShopCart({
                     </td>
                     <td className="number_toltal-payment">{totalPayment}</td>
                   </tr>
-                  <div className="payment">
-                    <button
-                      className="btn_make-a-payment"
+                  <tr className="payment">
+                    <input
+                      className="make-a-payment"
+                      placeholder="MAKE A PAYMENT"
                       onClick={() => setShowContent(false)}
-                    >
-                      MAKE A PAYMENT
-                    </button>
-                  </div>
+                    />
+                  </tr>
                 </tbody>
               </Table>
             </div>
           </div>{" "}
         </div>
       ) : (
-       <Checkout cartItems={cartItems} setShowContent={setShowContent}/>
+        <Checkout cartItems={cartItems} setShowContent={setShowContent} />
       )}
     </>
   );

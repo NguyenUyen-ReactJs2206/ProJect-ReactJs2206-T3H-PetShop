@@ -1,9 +1,9 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
 }
-.home-page{
+.home-page {
   padding-top: 80px;
 }
 
@@ -18,9 +18,12 @@
   text-align: center;
 }
 .page-home_alldog-title {
-  background-image: linear-gradient(to left top,
-  rgba(39, 238, 232, 0.5) 40%,
-  rgba(81, 207, 252, 0.5)),url("../image/banner1.jpg");
+  background-image: linear-gradient(
+      to left top,
+      rgba(39, 238, 232, 0.5) 40%,
+      rgba(81, 207, 252, 0.5)
+    ),
+    url("../image/banner1.jpg");
   width: 100%;
   height: 30vh;
   background-size: cover;
@@ -29,11 +32,17 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .page-home_allcat-title {
-  background-image: linear-gradient(to left top,
-  rgba(39, 238, 232, 0.5) 40%,
-  rgba(81, 207, 252, 0.5)),url("../image/banner2.jpg");
+  background-image: linear-gradient(
+      to left top,
+      rgba(39, 238, 232, 0.5) 40%,
+      rgba(81, 207, 252, 0.5)
+    ),
+    url("../image/banner2.jpg");
   width: 100%;
   height: 30vh;
   background-size: cover;
@@ -42,8 +51,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.page-home_alldog-title h4,.page-home_allcat-title h4 {
+.page-home_alldog-title h4,
+.page-home_allcat-title h4 {
   font-size: 36px;
   font-weight: 600;
   color: rgb(9, 92, 103);

@@ -10,17 +10,24 @@ export default function Navbar({
   menuCats,
   onSelectCat,
   countCartItems,
+  setShowInformationProduct,
 }) {
   return (
     <div className="container-fuid">
       <div id="header">
         <nav>
           <Link to="/" id="logo">
-            <img src={imageLogo} alt="logopetshop" />
+            <img
+              src={imageLogo}
+              alt="logopetshop"
+              onClick={() => setShowInformationProduct(true)}
+            />
           </Link>
           <ul id="main-menu">
             <li>
-              <Link to="/home">HOME</Link>
+              <Link to="/home" onClick={() => setShowInformationProduct(true)}>
+                HOME
+              </Link>
             </li>
             <li>
               <Link to="/dogs">

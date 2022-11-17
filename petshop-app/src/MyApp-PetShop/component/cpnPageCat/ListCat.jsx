@@ -9,29 +9,36 @@ export default function ListCat({ cats, onClickAddCart }) {
         {cats.map((item, index) => {
           console.log("item", item);
           return (
-            <Card
-              key={index}
-              className="col-xl-3 col-lg-3 col-sm-4 col-6 cards card_pet"
-            >
-              <Card.Img
-                className="card_pet-image"
-                variant="top"
-                src={item.url}
-              />
-              <Card.Body>
-                <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                <Card.Text>
-                  <span className="card_pet-oldprice">{item.priceOld}</span>
-                  <br />
-                  <span className="card_pet-newprice">
-                    Price Current: {item.priceCurrent} (đ)
-                  </span>
-                </Card.Text>
-                <Button variant="primary" onClick={() => onClickAddCart(item)}>
-                  Add to cart
-                </Button>
-              </Card.Body>
-            </Card>
+            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+              <Card
+                key={index}
+                // onClick={() => setShowInformationProduct(false)}
+                className="card_pet"
+              >
+                <Card.Img
+                  className="card_pet-image"
+                  variant="top"
+                  src={item.url}
+                />
+                <Card.Body>
+                  <Card.Title className="card_pet-name">{item.name}</Card.Title>
+                  <Card.Text className="card-text_pet">
+                    <span className="card_pet-oldprice">{item.priceOld}</span>
+                    <br />
+                    <span className="card_pet-newprice">
+                      Price Current: {item.priceCurrent}$
+                    </span>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Button
+                variant="primary"
+                onClick={() => onClickAddCart(item)}
+                className="button-add-to-cart"
+              >
+                Add to cart
+              </Button>
+            </div>
           );
         })}
       </div>

@@ -16,8 +16,11 @@ export default function PetCartRelated({ onClickAddCart }) {
               .filter((item) => item.priceOld != null)
               .map((item, index) => (
                 <Carousel.Item interval={5000}>
-                  <Card className="d-block slide_product_related" key={index}>
-                    <Card className="card_pet">
+                  <div className="cards ">
+                    <Card
+                      className="d-block slide_product_related card_pet"
+                      key={index}
+                    >
                       <Card.Img
                         className="card_pet-image"
                         variant="top"
@@ -27,7 +30,7 @@ export default function PetCartRelated({ onClickAddCart }) {
                         <Card.Title className="card_pet-name">
                           {item.name}
                         </Card.Title>
-                        <Card.Text>
+                        <Card.Text className="card-text_pet">
                           <span className="card_pet-oldprice">
                             {item.priceOld}
                           </span>
@@ -36,15 +39,16 @@ export default function PetCartRelated({ onClickAddCart }) {
                             Price Current: {item.priceCurrent}đ
                           </span>
                         </Card.Text>
-                        <Button
-                          variant="primary"
-                          onClick={() => onClickAddCart(item)}
-                        >
-                          Add to cart
-                        </Button>
                       </Card.Body>
                     </Card>
-                  </Card>
+                    <Button
+                      variant="primary"
+                      onClick={() => onClickAddCart(item)}
+                      className="button-add-to-cart-related"
+                    >
+                      Add to cart
+                    </Button>
+                  </div>
                 </Carousel.Item>
               ))}
           </Carousel>
@@ -55,8 +59,11 @@ export default function PetCartRelated({ onClickAddCart }) {
               .filter((item) => item.priceOld != null)
               .map((item, index) => (
                 <Carousel.Item interval={5000}>
-                  <Card className="d-block slide_product_related" key={index}>
-                    <Card className="card_pet">
+                  <div className="cards ">
+                    <Card
+                      className="d-block slide_product_related card_pet"
+                      key={index}
+                    >
                       <Card.Img
                         className="card_pet-image"
                         variant="top"
@@ -66,7 +73,7 @@ export default function PetCartRelated({ onClickAddCart }) {
                         <Card.Title className="card_pet-name">
                           {item.name}
                         </Card.Title>
-                        <Card.Text>
+                        <Card.Text className="card-text_pet">
                           <span className="card_pet-oldprice">
                             {item.priceOld}
                           </span>
@@ -75,15 +82,16 @@ export default function PetCartRelated({ onClickAddCart }) {
                             Price Current: {item.priceCurrent}đ
                           </span>
                         </Card.Text>
-                        <Button
-                          variant="primary"
-                          onClick={() => onClickAddCart(item)}
-                        >
-                          Add to cart
-                        </Button>
                       </Card.Body>
                     </Card>
-                  </Card>
+                    <Button
+                      variant="primary"
+                      onClick={() => onClickAddCart(item)}
+                      className="button-add-to-cart-related"
+                    >
+                      Add to cart
+                    </Button>
+                  </div>
                 </Carousel.Item>
               ))}
           </Carousel>

@@ -96,15 +96,13 @@ span.cart-item-oldprice {
   font-size: 12px;
 }
 .item-remove {
-  background-color: rgb(238, 141, 36);
-  color: white;
-  border: 1px solid rgb(238, 141, 36);
-  border-radius: 10px;
-  width: 80px;
-  height: 30px;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  color: rgb(81, 79, 79);
 }
 .item-remove:hover {
-  background-color: rgb(255, 123, 0);
+  color: black;
 }
 
 /* tbody bảng phía dưới */
@@ -119,27 +117,27 @@ td.number_toltal-payment {
   font-weight: 50px;
 }
 
-.payment {
-  text-align: center;
+tr.payment {
   justify-content: center;
   align-items: center;
-}
-.payment button {
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(238, 141, 36);
   width: 100%;
   color: black;
   font-weight: 700;
+  width: 100%;
   border: none;
-  box-shadow: inset 0 8px 8px -8px rgb(0 0 0 / 50%),
-    inset 0 -8px 10px -8px rgb(0 0 0 / 30%);
-    margin-left: 30px;
-    margin-top: 15px;
 }
-.payment button:hover {
-  background-color: rgb(255, 123, 0);
+.payment input.make-a-payment {
+  text-align: center;
+  width: 100%;
+  margin-left: 20px;
+  background-color: rgba(67, 238, 232, 0.8);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+.payment input.make-a-payment:hover {
+  cursor: pointer;
+  background-color: rgb(6, 209, 179);
+}
+
 /* thanh toán */
 .checkout-order {
   background-image: linear-gradient(
@@ -154,14 +152,15 @@ td.number_toltal-payment {
   /*can giua background */
   height: 60vh;
   text-align: center;
-  box-shadow: inset 0 8px 8px -8px rgba(33, 32, 32, 0.5), inset 0 -10px 20px -10px rgb(0 0 0 / 30%);
+  box-shadow: inset 0 8px 8px -8px rgba(33, 32, 32, 0.5),
+    inset 0 -10px 20px -10px rgb(0 0 0 / 30%);
 }
 .checkout-order .banner-checkout {
   padding-top: 150px;
 }
 .checkout-order .banner-checkout h3 {
   font-size: 72px;
-  color:  rgb(255, 123, 0);
+  color: rgb(255, 123, 0);
 }
 .checkout-order .banner-checkout h6 {
   font-size: 20px;
@@ -175,5 +174,3 @@ td.number_toltal-payment {
 .checkout-order .banner-checkout h6:hover {
   color: rgb(255, 121, 18);
 }
-
-

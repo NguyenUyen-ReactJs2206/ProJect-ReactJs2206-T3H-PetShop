@@ -25,7 +25,7 @@ export default function SearchDog( {
           </label>
 
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-selected">
             {selectedDog}
             </Dropdown.Toggle>
             <Dropdown.Menu>

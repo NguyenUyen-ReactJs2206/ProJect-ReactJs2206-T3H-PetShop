@@ -3,20 +3,20 @@ import { Button, Card } from "react-bootstrap";
 import { listCat } from "../../../api";
 import { PAGINATION_CAT } from "../../../helper/constants";
 import PaginationCat from "./PaginationCat";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Input = styled.input`
- border: 1px solid none;
-border-radius: 2px;
-margin-right:10px;
-padding:5px;
+  border: 1px solid none;
+  border-radius: 2px;
+  margin-right: 10px;
+  padding: 5px;
 `;
 const Select = styled.select`
- border: 1px solid none;
-border-radius: 2px;
-padding:5px;
+  border: 1px solid none;
+  border-radius: 2px;
+  padding: 5px;
 `;
-export default function AllCat({ onClickAddCart }) {
+export default function AllCat({ onClickAddCart, setShowInformationProduct }) {
   const [cats, setCats] = useState([...listCat]);
   //Search for All Cat
   const [inputFilterCat, setInputFilterCat] = useState("");
@@ -35,7 +35,7 @@ export default function AllCat({ onClickAddCart }) {
 
     let listCatFilter = [...cats];
     let resultFilterCat = [];
-    if (inputFilterCat === "") {
+    if (keySearchFilter === "") {
       setCats(listCat);
       setPaginationCat({
         ...paginationCat,
@@ -43,9 +43,11 @@ export default function AllCat({ onClickAddCart }) {
         totalPageCat: Math.ceil(listCat.length / PAGINATION_CAT.LIMIT_CAT),
       });
     }
-    if (inputFilterCat) {
+    if (keySearchFilter) {
       resultFilterCat = listCatFilter.filter((element) => {
-        return element.name.toLocaleLowerCase().includes(inputFilterCat);
+        return element.name
+          .toLocaleUpperCase()
+          .includes(keySearchFilter.toLocaleUpperCase());
       });
       setCats(resultFilterCat);
       setPaginationCat({
@@ -126,29 +128,36 @@ export default function AllCat({ onClickAddCart }) {
       <div className="container show-card">
         <div className="row ">
           {catPage.map((item, index) => (
-            <Card
-              key={index}
-              className="col-xl-3 col-lg-3 col-sm-6 col-6 cards card_pet"
-            >
-              <Card.Img
-                className="card_pet-image"
-                variant="top"
-                src={item.url}
-              />
-              <Card.Body>
-                <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                <Card.Text>
-                  <span className="card_pet-oldprice">{item.priceOld}</span>
-                  <br />
-                  <span className="card_pet-newprice">
-                    Price Current: {item.priceCurrent}đ
-                  </span>
-                </Card.Text>
-                <Button variant="primary" onClick={() => onClickAddCart(item)}>
-                  Add to cart
-                </Button>
-              </Card.Body>
-            </Card>
+            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+              <Card
+                key={index}
+                onClick={() => setShowInformationProduct(false)}
+                className="card_pet"
+              >
+                <Card.Img
+                  className="card_pet-image"
+                  variant="top"
+                  src={item.url}
+                />
+                <Card.Body>
+                  <Card.Title className="card_pet-name">{item.name}</Card.Title>
+                  <Card.Text>
+                    <span className="card_pet-oldprice">{item.priceOld}</span>
+                    <br />
+                    <span className="card_pet-newprice">
+                      Price Current: {item.priceCurrent}$
+                    </span>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Button
+                variant="primary"
+                onClick={() => onClickAddCart(item)}
+                className="button-add-to-cart"
+              >
+                Add to cart
+              </Button>
+            </div>
           ))}{" "}
           <PaginationCat
             onChangePageCat={onChangePageCat}

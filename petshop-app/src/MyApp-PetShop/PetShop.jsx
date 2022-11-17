@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import Dogs from "./page/Dogs";
@@ -10,28 +10,85 @@ import AboutUs from "./page/AboutUs";
 import User from "./page/User";
 
 export default function PetShop() {
-  //làm select cho cat trên navbar
-  const menuCats = useMemo(() => menuCat(), []);
-  const [selectedCat, setSelectedCat] = useState("British Longhair");
-  const onSelectCat = (curcat) => {
-    console.log(curcat, "curcat");
-    setSelectedCat(curcat);
-  };
-  //làm select cho dog trên navbar
+  //state save item when add to cart
+  const [cartItems, setCartItems] = useState([]);
+
+  //menu select for navbar
   const menuDogs = useMemo(() => menuDog(), []);
+  const menuCats = useMemo(() => menuCat(), []);
   const [selectedDog, setSelectedDog] = useState("Alaska");
+  const [selectedCat, setSelectedCat] = useState("British Longhair");
+
+  //sate show, hide product information
+  const [showInformationProduct, setShowInformationProduct] = useState(true);
   const onSelectDog = (curdog) => {
-    console.log(curdog, "curdog");
     setSelectedDog(curdog);
   };
-  //thêm vào giỏ hàng
-  const [cartItems, setCartItems] = useState([]);
-  const onClickAddCart = (item) => {
-    console.log(cartItems.indexOf(item), "cartItems.indexOf(item)");
-    if (cartItems.indexOf(item) !== -1) return;
-    setCartItems([...cartItems, item]);
+  const onSelectCat = (curcat) => {
+    setSelectedCat(curcat);
   };
 
+  //Push to cart
+  const onClickAddCart = (item) => {
+    if (cartItems.indexOf(item) !== -1)
+      return alert("You already have this product in your cart!");
+    setCartItems([...cartItems, item]);
+  };
+  //increase and decrease items
+  const handleChange = (item, d) => {
+    // d là 1 nếu click +
+    // d là -1 nếu click -
+    // ind vị trí của sản phẩm
+    const ind = cartItems.indexOf(item);
+    //mảng
+    const arrCartItems = cartItems;
+    console.log(arrCartItems, "arrCartItems");
+    // lấy ra mảng của sản phẩm thứ ind và +1 nếu Increase, -1 nếu là Decrease
+    arrCartItems[ind].amount += d;
+    console.log(arrCartItems[ind], "arrCartItems[ind]");
+    // nếu Decrese === 0 thì vẫn để amount là 1
+    if (arrCartItems[ind].amount === 0) return (arrCartItems[ind].amount = 1);
+    setCartItems([...arrCartItems]);
+  };
+  //Delete items
+  const handleRemove = (item) => {
+    const remove = cartItems.filter((e) => e != item);
+    setCartItems(remove);
+  };
+  //state save price old
+  const [oldPrice, setOldPrice] = useState(0);
+  //state save discount
+  const [discount, setDiscount] = useState(0);
+  //state save total payment
+  const [totalPayment, setTotalPayment] = useState(0);
+  useEffect(() => {
+    let oldprice = 0;
+    cartItems
+      .filter((item) => item.priceOld != null)
+      .map((item) => (oldprice += item.amount * item.priceOld));
+    cartItems
+      .filter((item) => item.priceOld == null)
+      .map((item) => (oldprice += item.amount * item.priceCurrent));
+    setOldPrice(oldprice);
+
+    let total = 0;
+    cartItems.map((item) => (total += item.amount * item.priceCurrent));
+    setTotalPayment(total);
+  }, [cartItems]);
+  useEffect(() => {
+    setDiscount(oldPrice - totalPayment);
+  }, [oldPrice, totalPayment]);
+
+// const [showInforCard, setShowInforCard] = useState([])
+  //show information item
+  const onHandleShowInfomation = (item) => {
+  //   if (showInforCard.id === item.id)
+  //   setShowInforCard([...showInforCard, item]);
+  //  console.log(showInforCard,"showInforCard")
+  // console.log(item, "item")
+    setShowInformationProduct(false);
+  };
+ 
   return (
     <div>
       <BrowserRouter>
@@ -41,15 +98,34 @@ export default function PetShop() {
           menuCats={menuCats}
           onSelectCat={onSelectCat}
           countCartItems={cartItems.length}
+          setShowInformationProduct={setShowInformationProduct}
         />
         <Routes>
           <Route
             path="/"
-            element={<Home onClickAddCart={onClickAddCart} />}
+            element={
+              <Home
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+                onClickAddCart={onClickAddCart}
+                showInformationProduct={showInformationProduct}
+                setShowInformationProduct={setShowInformationProduct}
+                onHandleShowInfomation={onHandleShowInfomation}
+              />
+            }
           ></Route>
           <Route
             path="/home"
-            element={<Home onClickAddCart={onClickAddCart} />}
+            element={
+              <Home
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+                onClickAddCart={onClickAddCart}
+                showInformationProduct={showInformationProduct}
+                setShowInformationProduct={setShowInformationProduct}
+                onHandleShowInfomation={onHandleShowInfomation}
+              />
+            }
           ></Route>
           <Route
             path="/dogs"
@@ -62,7 +138,7 @@ export default function PetShop() {
             }
           ></Route>
 
-         {menuDogs.map((Val) => (
+          {menuDogs.map((Val) => (
             <Route
               path={`/dogs/${Val}`}
               element={
@@ -97,15 +173,24 @@ export default function PetShop() {
               }
             ></Route>
           ))}
-          <Route path="/about-us" element={<AboutUs/>}></Route>
+          <Route path="/about-us" element={<AboutUs />}></Route>
           <Route
             path="/cart"
-            element={<Cart cartItems={cartItems} setCartItems={setCartItems} onClickAddCart={onClickAddCart}/>}
+            element={
+              <Cart
+                cartItems={cartItems}
+                handleChange={handleChange}
+                handleRemove={handleRemove}
+                totalPayment={totalPayment}
+                oldPrice={oldPrice}
+                discount={discount}
+                onClickAddCart={onClickAddCart}
+              />
+            }
           ></Route>
-           <Route path="/user" element={<User/>}></Route>
-           <Route path="/user/log-in" element={<User/>}></Route>
-           <Route path="/user/sign-up" element={<User/>}></Route>
-
+          <Route path="/user" element={<User />}></Route>
+          <Route path="/user/log-in" element={<User />}></Route>
+          <Route path="/user/sign-up" element={<User />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
