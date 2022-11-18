@@ -27,7 +27,7 @@ export default function SearchCat({
 
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-            {selectedCat}
+              {selectedCat}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {menuCats.length > 0 &&

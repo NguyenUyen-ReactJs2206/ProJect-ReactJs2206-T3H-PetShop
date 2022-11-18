@@ -30,7 +30,7 @@
     rgba(75, 240, 226, 0.05) 0px 25px;
 }
 .cards:hover .button-add-to-cart {
- display: block;
+  display: block;
 }
 .card_pet-image {
   width: 100%;
@@ -76,6 +76,6 @@
   align-items: center;
 }
 .button-add-to-cart:hover {
- background-color: rgb(148, 251, 250);
- color: rgb(14, 129, 129);
+  background-color: rgb(148, 251, 250);
+  color: rgb(14, 129, 129);
 }

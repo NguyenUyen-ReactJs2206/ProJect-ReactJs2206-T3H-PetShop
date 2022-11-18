@@ -67,7 +67,7 @@ span.cart-item-oldprice {
 }
 .cart-item-totalmoney {
   max-width: 80px;
-  word-break: break-word;
+  margin-top: 20px;
   font-size: 14px;
 }
 .cart-item-oldprice {

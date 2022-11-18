@@ -1,6 +1,9 @@
 import { Carousel } from "react-bootstrap";
 import React from "react";
 import "../.././css/slide.css";
+import banner1 from "../../image/banner_slide1.png";
+import banner2 from "../../image/banner_slide2.png";
+import banner3 from "../../image/banner_slide3.png";
 
 export default function Banner() {
   return (
@@ -8,37 +11,23 @@ export default function Banner() {
       <Carousel.Item interval={3000}>
         <img
           className="d-block slide_baner-image"
-          src="https://onfire-bg.com/cach-nhan-biet-cho-alaska-thuan-chung/imager_1_12887_700.jpg"
+          src={banner1}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={3000}>
         <img
           className="d-block slide_baner-image"
-          src="https://meocun.com/wp-content/uploads/meocunpetshop-banner-1b-1.jpg"
+          src={banner2}
           alt="Second slide"
         />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={3000}>
         <img
           className="d-block slide_baner-image"
-          src="https://blogyeuchomeo.com/wp-content/uploads/2017/10/banner-website-1.jpg"
+          src={banner3}
           alt="Third slide"
         />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
   );

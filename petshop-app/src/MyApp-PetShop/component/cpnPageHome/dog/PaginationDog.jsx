@@ -7,7 +7,6 @@ export default function PaginationDog({
   totalPageDog,
   currentPageDog,
 }) {
-  // tạo ra 1 mảng các trang: vd: 10 => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   const arrPageDog = [];
   for (let i = 1; i <= totalPageDog; i++) {
     arrPageDog.push(i);

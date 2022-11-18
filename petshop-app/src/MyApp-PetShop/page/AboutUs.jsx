@@ -5,34 +5,34 @@ export default function AboutUs() {
   return (
     <div className="about-us">
       <div className="row">
-        <div class="blog">
-          <div class="title-box">
+        <div className="blog">
+          <div className="title-box">
             <h3>SPRING FEVER</h3>
             <hr />
-            <div class="intro">
+            <div className="intro">
               Yllamco laboris nisi ut aliquip ex ea commodo.
             </div>
           </div>
-          <div class="info">
+          <div className="info">
             <span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim.
             </span>
           </div>
-          <div class="footer">
-            <div class="icon-holder">
+          <div className="footer">
+            <div className="icon-holder">
               <span>
-                <i class="fa fa-comment-o"></i>
+                <i className="fa fa-comment-o"></i>
                 <span>12</span>
                 <space></space>
-                <i class="fa fa-calendar"></i>
+                <i className="fa fa-calendar"></i>
                 <span>03.12.2015</span>
               </span>
             </div>
           </div>
 
-          <div class="color-overlay"></div>
+          <div className="color-overlay"></div>
         </div>
       </div>
     </div>

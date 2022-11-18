@@ -30,7 +30,7 @@ export default function Navbar({
               </Link>
             </li>
             <li>
-              <Link to="/dogs">
+              <Link to="/dogs" onClick={() => setShowInformationProduct(true)}>
                 DOGS
                 <span>
                   <FaAngleDown />
@@ -47,7 +47,7 @@ export default function Navbar({
               </ul>
             </li>
             <li>
-              <Link to="/cats">
+              <Link to="/cats" onClick={() => setShowInformationProduct(true)}>
                 CATS{" "}
                 <span>
                   <FaAngleDown />

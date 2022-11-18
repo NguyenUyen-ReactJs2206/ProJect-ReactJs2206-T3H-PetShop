@@ -5,15 +5,23 @@ import SignUp from "../component/cpnPageUser/SignUp";
 import "../css/pageuser.css";
 
 export default function User() {
-    const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(true);
   return (
     <>
       <div className=" page-user">
         {" "}
-        <Link to="/user/log-in" onClick={()=>setShowForm(true)} >LOG IN</Link>
-        <Link to="/user/sign-up" onClick={()=>setShowForm(false)}>SIGN UP</Link>
+        <Link to="/user/log-in" onClick={() => setShowForm(true)}>
+          LOG IN
+        </Link>
+        <Link to="/user/sign-up" onClick={() => setShowForm(false)}>
+          SIGN UP
+        </Link>
       </div>
-      {showForm ? (<LogIn setShowForm={setShowForm}/>) : ( <SignUp setShowForm={setShowForm}/> )}
+      {showForm ? (
+        <LogIn setShowForm={setShowForm} />
+      ) : (
+        <SignUp setShowForm={setShowForm} />
+      )}
     </>
   );
 }

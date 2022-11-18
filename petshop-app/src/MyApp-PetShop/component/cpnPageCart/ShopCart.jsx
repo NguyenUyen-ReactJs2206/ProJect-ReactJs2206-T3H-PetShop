@@ -64,7 +64,7 @@ export default function ShopCart({
                           </span>
                           <br />
                           <span className="cart-item-newprice">
-                            {item.priceCurrent}đ
+                            {item.priceCurrent}$
                           </span>
                         </td>
                         <td className="cart-item-amount">
@@ -92,7 +92,7 @@ export default function ShopCart({
                           </div>
                         </td>
                         <td className="cart-item-totalmoney">
-                          <b>{totalMoney}đ</b>
+                          <b>{totalMoney}$</b>
                         </td>
                         <td className="cart-item-remove">
                           <FaTrash
@@ -124,7 +124,7 @@ export default function ShopCart({
                     <td className="cart-order_toltal-payment">
                       <h5>Total payment</h5>
                     </td>
-                    <td className="number_toltal-payment">{totalPayment}</td>
+                    <td className="number_toltal-payment">{totalPayment}($)</td>
                   </tr>
                   <tr className="payment">
                     <input

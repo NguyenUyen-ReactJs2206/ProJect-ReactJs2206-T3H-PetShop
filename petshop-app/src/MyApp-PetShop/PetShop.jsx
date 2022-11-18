@@ -8,6 +8,7 @@ import { menuCat, menuDog } from "./helper/help";
 import Cart from "./page/Cart";
 import AboutUs from "./page/AboutUs";
 import User from "./page/User";
+import { listCat, listDog } from "./api";
 
 export default function PetShop() {
   //state save item when add to cart
@@ -18,14 +19,18 @@ export default function PetShop() {
   const menuCats = useMemo(() => menuCat(), []);
   const [selectedDog, setSelectedDog] = useState("Alaska");
   const [selectedCat, setSelectedCat] = useState("British Longhair");
-
   //sate show, hide product information
   const [showInformationProduct, setShowInformationProduct] = useState(true);
+  //state save item to show information when onclick card for DOG and CAT
+  const [showInforCard, setShowInforCard] = useState([]);
+  //select pet
   const onSelectDog = (curdog) => {
     setSelectedDog(curdog);
+    setShowInformationProduct(true);
   };
   const onSelectCat = (curcat) => {
     setSelectedCat(curcat);
+    setShowInformationProduct(true);
   };
 
   //Push to cart
@@ -34,61 +39,21 @@ export default function PetShop() {
       return alert("You already have this product in your cart!");
     setCartItems([...cartItems, item]);
   };
-  //increase and decrease items
-  const handleChange = (item, d) => {
-    // d là 1 nếu click +
-    // d là -1 nếu click -
-    // ind vị trí của sản phẩm
-    const ind = cartItems.indexOf(item);
-    //mảng
-    const arrCartItems = cartItems;
-    console.log(arrCartItems, "arrCartItems");
-    // lấy ra mảng của sản phẩm thứ ind và +1 nếu Increase, -1 nếu là Decrease
-    arrCartItems[ind].amount += d;
-    console.log(arrCartItems[ind], "arrCartItems[ind]");
-    // nếu Decrese === 0 thì vẫn để amount là 1
-    if (arrCartItems[ind].amount === 0) return (arrCartItems[ind].amount = 1);
-    setCartItems([...arrCartItems]);
-  };
-  //Delete items
-  const handleRemove = (item) => {
-    const remove = cartItems.filter((e) => e != item);
-    setCartItems(remove);
-  };
-  //state save price old
-  const [oldPrice, setOldPrice] = useState(0);
-  //state save discount
-  const [discount, setDiscount] = useState(0);
-  //state save total payment
-  const [totalPayment, setTotalPayment] = useState(0);
-  useEffect(() => {
-    let oldprice = 0;
-    cartItems
-      .filter((item) => item.priceOld != null)
-      .map((item) => (oldprice += item.amount * item.priceOld));
-    cartItems
-      .filter((item) => item.priceOld == null)
-      .map((item) => (oldprice += item.amount * item.priceCurrent));
-    setOldPrice(oldprice);
 
-    let total = 0;
-    cartItems.map((item) => (total += item.amount * item.priceCurrent));
-    setTotalPayment(total);
-  }, [cartItems]);
-  useEffect(() => {
-    setDiscount(oldPrice - totalPayment);
-  }, [oldPrice, totalPayment]);
-
-// const [showInforCard, setShowInforCard] = useState([])
-  //show information item
-  const onHandleShowInfomation = (item) => {
-  //   if (showInforCard.id === item.id)
-  //   setShowInforCard([...showInforCard, item]);
-  //  console.log(showInforCard,"showInforCard")
-  // console.log(item, "item")
+  //show information item for Dog
+  const onHandleShowInfomationDog = (item) => {
+    let resultDog = [];
+    resultDog = [...listDog].find((val) => item.id === val.id);
+    setShowInforCard(resultDog);
     setShowInformationProduct(false);
   };
- 
+  //show information item for Cat
+  const onHandleShowInfomationCat = (item) => {
+    let resultCat = [];
+    resultCat = [...listCat].find((val) => item.id === val.id);
+    setShowInforCard(resultCat);
+    setShowInformationProduct(false);
+  };
   return (
     <div>
       <BrowserRouter>
@@ -110,7 +75,9 @@ export default function PetShop() {
                 onClickAddCart={onClickAddCart}
                 showInformationProduct={showInformationProduct}
                 setShowInformationProduct={setShowInformationProduct}
-                onHandleShowInfomation={onHandleShowInfomation}
+                onHandleShowInfomationDog={onHandleShowInfomationDog}
+                onHandleShowInfomationCat={onHandleShowInfomationCat}
+                showInforCard={showInforCard}
               />
             }
           ></Route>
@@ -118,12 +85,12 @@ export default function PetShop() {
             path="/home"
             element={
               <Home
-                cartItems={cartItems}
-                setCartItems={setCartItems}
                 onClickAddCart={onClickAddCart}
                 showInformationProduct={showInformationProduct}
                 setShowInformationProduct={setShowInformationProduct}
-                onHandleShowInfomation={onHandleShowInfomation}
+                onHandleShowInfomationDog={onHandleShowInfomationDog}
+                onHandleShowInfomationCat={onHandleShowInfomationCat}
+                showInforCard={showInforCard}
               />
             }
           ></Route>
@@ -134,6 +101,10 @@ export default function PetShop() {
                 selectedDog={selectedDog}
                 onSelectDog={onSelectDog}
                 onClickAddCart={onClickAddCart}
+                showInformationProduct={showInformationProduct}
+                setShowInformationProduct={setShowInformationProduct}
+                onHandleShowInfomationDog={onHandleShowInfomationDog}
+                showInforCard={showInforCard}
               />
             }
           ></Route>
@@ -146,6 +117,10 @@ export default function PetShop() {
                   selectedDog={selectedDog}
                   onSelectDog={onSelectDog}
                   onClickAddCart={onClickAddCart}
+                  showInformationProduct={showInformationProduct}
+                  setShowInformationProduct={setShowInformationProduct}
+                  onHandleShowInfomationDog={onHandleShowInfomationDog}
+                  showInforCard={showInforCard}
                 />
               }
             ></Route>
@@ -157,6 +132,10 @@ export default function PetShop() {
                 selectedCat={selectedCat}
                 onSelectCat={onSelectCat}
                 onClickAddCart={onClickAddCart}
+                showInformationProduct={showInformationProduct}
+                setShowInformationProduct={setShowInformationProduct}
+                onHandleShowInfomationCat={onHandleShowInfomationCat}
+                showInforCard={showInforCard}
               />
             }
           ></Route>
@@ -169,6 +148,10 @@ export default function PetShop() {
                   selectedCat={selectedCat}
                   onSelectCat={onSelectCat}
                   onClickAddCart={onClickAddCart}
+                  showInformationProduct={showInformationProduct}
+                  setShowInformationProduct={setShowInformationProduct}
+                  onHandleShowInfomationCat={onHandleShowInfomationCat}
+                  showInforCard={showInforCard}
                 />
               }
             ></Route>
@@ -179,12 +162,11 @@ export default function PetShop() {
             element={
               <Cart
                 cartItems={cartItems}
-                handleChange={handleChange}
-                handleRemove={handleRemove}
-                totalPayment={totalPayment}
-                oldPrice={oldPrice}
-                discount={discount}
+                setCartItems={setCartItems}
                 onClickAddCart={onClickAddCart}
+                onHandleShowInfomationCat={onHandleShowInfomationCat}
+                onHandleShowInfomationDog={onHandleShowInfomationDog}
+                showInforCard={showInforCard}
               />
             }
           ></Route>

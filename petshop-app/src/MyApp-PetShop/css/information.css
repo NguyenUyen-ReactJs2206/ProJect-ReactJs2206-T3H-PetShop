@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+.infor-pet {
+  height: 100vh;
+}
+span.come-back-home {
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(22, 138, 99);
+}
+span.come-back-home:hover {
+  color: rgb(2, 40, 28);
+  text-decoration: underline;
+}
+.information-box {
+  display: flex;
+}
+.image-box {
+  text-align: end;
+  width: fit-content;
+}
+.image-box img {
+  width: 70%;
+  height: 30em;
+}
+.title-information-box {
+  position: relative;
+}
+.title-information-box {
+  display: inline-block;
+  width: 80%;
+  text-align: start;
+  margin-top: 4em;
+}
+.title-information-box hr {
+  margin-top: -0.4em;
+  margin-bottom: 1em;
+  width: 5em;
+  height: 0.25em;
+  box-sizing: content-box;
+  border: none;
+  background: rgb(55, 196, 149);
+}
+.title-information-box h4 {
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 2em;
+  color: rgb(7, 27, 65);
+  font-family: "Courier New", Courier, monospace;
+}
+.intro-pet {
+  color: red;
+}
+.button-box {
+  display: flex;
+}
+table.table-intro {
+  margin-top: 2em;
+  margin-left: -0.2em;
+}
+.table-intro tr,
+.table-intro td {
+  border: 1px dashed;
+  color: black;
+  height: 4em;
+  width: fit-content;
+  text-align: center;
+  padding: 1em;
+}
+button.add-cart {
+  margin-top: 20px;
+  width: 100%;
+  height: 3em;
+  color: black;
+  background-color: aquamarine;
+  border: none;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+button.add-cart:hover {
+  background-color: rgb(69, 209, 162);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+@media (max-width: 768px) {
+  .image-box img {
+    width: 70%;
+    height: 20em;
+  }
+  .title-information-box {
+    display: inline-block;
+    width: 80%;
+    text-align: start;
+    margin-top: 0em;
+  }
+  .table-intro tr,
+  td {
+    border: 1px dashed;
+    color: black;
+    height: 1em;
+    width: fit-content;
+    text-align: center;
+    font-size: 12px;
+  }
+}

@@ -14,13 +14,10 @@
   width: 100%;
   position: fixed;
   z-index: 999;
-  top:0;
-  
+  top: 0;
 }
 nav {
-  /** cho 2 thằng ngang hàng*/
   display: flex;
-  /** đẩy 2 thằng ra 2 bên*/
   justify-content: space-between;
   justify-items: center;
 }
@@ -105,14 +102,14 @@ nav {
   height: 20px;
 }
 .count-cart-shopping {
-position: absolute;
-border: 1px solid red;
-border-radius: 50%;
-width: 30px;
-height: 28px;
-text-align: center;
-background-color: red;
-font-size: 16px;
-margin-top: -20px;
-margin-left: -20px;
+  position: absolute;
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 30px;
+  height: 28px;
+  text-align: center;
+  background-color: red;
+  font-size: 16px;
+  margin-top: -20px;
+  margin-left: -20px;
 }

@@ -4,6 +4,8 @@ import { listDog } from "../../../api";
 import { PAGINATION_DOG } from "../../../helper/constants";
 import PaginationDog from "./PaginationDog";
 import styled from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled.input`
   border: 1px solid none;
@@ -16,7 +18,7 @@ const Select = styled.select`
   border-radius: 2px;
   padding: 5px;
 `;
-export default function AllDog({ onClickAddCart, onHandleShowInfomation}) {
+export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
   const [dogs, setDogs] = useState([...listDog]);
   //Search for All Dog
   const [inputFilterDog, setInputFilterDog] = useState("");
@@ -118,7 +120,7 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomation}) {
             value={inputFilterDog}
             onChange={(e) => onHandleSearchDog(e.target.value)}
           />
-          <Select 
+          <Select
             className="select-by-price"
             onChange={(e) => onHandleSortPrice(e.target.value)}
           >
@@ -130,11 +132,11 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomation}) {
       </div>
       <div className="container show-card">
         <div className="row ">
-          {dogPage.map((item, index) => (
+          {dogPage.map((item) => (
             <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
               <Card
-                key={index}
-                onClick={()=>onHandleShowInfomation(item)}
+                key={item.id}
+                onClick={() => onHandleShowInfomationDog(item)}
                 className="card_pet"
               >
                 <Card.Img
@@ -153,9 +155,15 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomation}) {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              <ToastContainer />
               <Button
                 variant="primary"
-                onClick={() => onClickAddCart(item)}
+                onClick={() =>
+                  onClickAddCart(
+                    item,
+                    toast("The product is already in your cart!")
+                  )
+                }
                 className="button-add-to-cart"
               >
                 Add to cart

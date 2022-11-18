@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "../.././css/listpet.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-export default function ListDog({ dogs, onClickAddCart }) {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function ListDog({
+  dogs,
+  onClickAddCart,
+  onHandleShowInfomationDog,
+}) {
   return (
     <div className="container show-card">
       <div className="row">
@@ -13,7 +18,7 @@ export default function ListDog({ dogs, onClickAddCart }) {
             <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
               <Card
                 key={index}
-                // onClick={() => setShowInformationProduct(false)}
+                onClick={() => onHandleShowInfomationDog(item)}
                 className="card_pet"
               >
                 <Card.Img
@@ -32,12 +37,15 @@ export default function ListDog({ dogs, onClickAddCart }) {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <ToastContainer/>
+              <ToastContainer />
               <Button
                 variant="primary"
-                onClick={() => onClickAddCart(item
-                  ,
-                  toast("đã thêm"))}
+                onClick={() =>
+                  onClickAddCart(
+                    item,
+                    toast("The product is already in your cart!")
+                  )
+                }
                 className="button-add-to-cart"
               >
                 Add to cart

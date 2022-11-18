@@ -203,7 +203,7 @@ export const listDog = [
 
 export const listCat = [
   {
-    id: 1,
+    id: 24,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR QUALITY",
     priceCurrent: 500,
@@ -211,7 +211,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 2,
+    id: 26,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR COUPLE",
     priceCurrent: 2000,
@@ -219,7 +219,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 3,
+    id: 27,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR WHITE GREY",
     priceCurrent: 570,
@@ -227,7 +227,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 4,
+    id: 28,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR EYE STRANGE",
     priceCurrent: 940,
@@ -235,7 +235,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 5,
+    id: 29,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR COLORFUL",
     priceCurrent: 540,
@@ -243,7 +243,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 6,
+    id: 30,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR EYE 2 COLORS",
     priceOld: 910,
@@ -252,7 +252,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 7,
+    id: 31,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR COUPLE",
     priceCurrent: 1460,
@@ -260,7 +260,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 8,
+    id: 32,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR SO PRETTY",
     priceOld: 770,
@@ -269,7 +269,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 9,
+    id: 33,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR CUTE",
     priceCurrent: 690,
@@ -277,7 +277,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 10,
+    id: 34,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR LOVELY",
     priceOld: 710,
@@ -286,7 +286,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 11,
+    id: 35,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR SO PRETTY",
     priceCurrent: 840,
@@ -294,7 +294,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 12,
+    id: 36,
     typeOf: "British Longhair",
     name: "BRITISH LONGHAIR SO QUALITY",
     priceOld: 760,
@@ -303,7 +303,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 13,
+    id: 37,
     typeOf: "Munchkin",
     name: "MUNCHKIN PRETTY",
     priceCurrent: 460,
@@ -311,7 +311,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 14,
+    id: 38,
     typeOf: "Munchkin",
     name: "MUNCHKIN CUTE",
     priceOld: 560,
@@ -320,7 +320,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 15,
+    id: 39,
     typeOf: "Munchkin",
     name: "MUNCHKIN SO CUTE",
     priceCurrent: 720,
@@ -328,7 +328,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 16,
+    id: 40,
     typeOf: "Munchkin",
     name: "MUNCHKIN QUALITY",
     priceOld: 890,
@@ -337,7 +337,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 17,
+    id: 41,
     typeOf: "Munchkin",
     name: "MUNCHKIN WHITE YELLOW",
     priceCurrent: 470,
@@ -345,7 +345,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 18,
+    id: 42,
     typeOf: "Munchkin",
     name: "MUNCHKIN BLACK",
     priceCurrent: 490,
@@ -353,7 +353,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 19,
+    id: 43,
     typeOf: "Munchkin",
     name: "MUNCHKIN BROWN",
     priceOld: 440,
@@ -362,7 +362,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 20,
+    id: 44,
     typeOf: "Munchkin",
     name: "MUNCHKIN SO HOT",
     priceCurrent: 650,
@@ -370,7 +370,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 21,
+    id: 45,
     typeOf: "Munchkin",
     name: "MUNCHKIN SO CUTE",
     priceOld: 530,
@@ -379,7 +379,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 22,
+    id: 46,
     typeOf: "Munchkin",
     name: "MUNCHKIN SO FAT",
     priceCurrent: 880,
@@ -387,7 +387,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 23,
+    id: 47,
     typeOf: "Munchkin",
     name: "MUNCHKIN FACE CUTE",
     priceCurrent: 800,
@@ -395,7 +395,7 @@ export const listCat = [
     amount: 1,
   },
   {
-    id: 24,
+    id: 48,
     typeOf: "Munchkin",
     name: "MUNCHKIN SO LOVELY",
     priceCurrent: 900,

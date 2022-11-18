@@ -4,6 +4,8 @@ import { listCat } from "../../../api";
 import { PAGINATION_CAT } from "../../../helper/constants";
 import PaginationCat from "./PaginationCat";
 import styled from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled.input`
   border: 1px solid none;
@@ -16,7 +18,7 @@ const Select = styled.select`
   border-radius: 2px;
   padding: 5px;
 `;
-export default function AllCat({ onClickAddCart, setShowInformationProduct }) {
+export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
   const [cats, setCats] = useState([...listCat]);
   //Search for All Cat
   const [inputFilterCat, setInputFilterCat] = useState("");
@@ -131,7 +133,7 @@ export default function AllCat({ onClickAddCart, setShowInformationProduct }) {
             <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
               <Card
                 key={index}
-                onClick={() => setShowInformationProduct(false)}
+                onClick={() => onHandleShowInfomationCat(item)}
                 className="card_pet"
               >
                 <Card.Img
@@ -150,9 +152,15 @@ export default function AllCat({ onClickAddCart, setShowInformationProduct }) {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              <ToastContainer />
               <Button
                 variant="primary"
-                onClick={() => onClickAddCart(item)}
+                onClick={() =>
+                  onClickAddCart(
+                    item,
+                    toast("The product is already in your cart!")
+                  )
+                }
                 className="button-add-to-cart"
               >
                 Add to cart

@@ -9,10 +9,10 @@ import Footer from "../component/Footer";
 export default function Home({
   onClickAddCart,
   showInformationProduct,
-  cartItems,
-  setCartItems,
   setShowInformationProduct,
-  onHandleShowInfomation,
+  onHandleShowInfomationDog,
+  onHandleShowInfomationCat,
+  showInforCard,
 }) {
   return (
     <div className="home-page">
@@ -21,22 +21,21 @@ export default function Home({
           <Banner />
           <AllDog
             onClickAddCart={onClickAddCart}
-            onHandleShowInfomation={onHandleShowInfomation}
+            onHandleShowInfomationDog={onHandleShowInfomationDog}
           />
           <AllCat
             onClickAddCart={onClickAddCart}
-            onHandleShowInfomation={onHandleShowInfomation}
+            onHandleShowInfomationCat={onHandleShowInfomationCat}
           />
         </>
       ) : (
         <InformationPet
-          cartItems={cartItems}
-          setCartItems={setCartItems}
+          onClickAddCart={onClickAddCart}
           setShowInformationProduct={setShowInformationProduct}
-          onHandleShowInfomation={onHandleShowInfomation}
+          showInforCard={showInforCard}
         />
       )}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function PetCartRelated({ onClickAddCart }) {
                           </span>
                           <br />
                           <span className="card_pet-newprice">
-                            Price Current: {item.priceCurrent}đ
+                            Price Current: {item.priceCurrent}$
                           </span>
                         </Card.Text>
                       </Card.Body>
@@ -79,7 +79,7 @@ export default function PetCartRelated({ onClickAddCart }) {
                           </span>
                           <br />
                           <span className="card_pet-newprice">
-                            Price Current: {item.priceCurrent}đ
+                            Price Current: {item.priceCurrent}$
                           </span>
                         </Card.Text>
                       </Card.Body>

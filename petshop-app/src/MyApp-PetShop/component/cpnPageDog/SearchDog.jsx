@@ -1,7 +1,7 @@
-import React from 'react'
-import { Dropdown } from 'react-bootstrap';
-import "../.././css/search.css"
-export default function SearchDog( {
+import React from "react";
+import { Dropdown } from "react-bootstrap";
+import "../.././css/search.css";
+export default function SearchDog({
   onSearchDog,
   inputDog,
   menuDogs,
@@ -25,8 +25,12 @@ export default function SearchDog( {
           </label>
 
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown-selected">
-            {selectedDog}
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-basic"
+              className="dropdown-selected"
+            >
+              {selectedDog}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {menuDogs.length > 0 &&
@@ -44,4 +48,3 @@ export default function SearchDog( {
     </div>
   );
 }
-
