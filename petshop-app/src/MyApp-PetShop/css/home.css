@@ -1,27 +1,37 @@
+/* CSS PAGE HOME  */
 * {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
+  /* font-family: "Courier New", Courier, monospace; */
+  font-family: 'Times New Roman', Times, serif;
 }
+/* CSS COMPONENT -- Home.jsx */
 .home-page {
-  padding-top: 80px;
+  padding-top: 50px;
+  position: relative;
 }
-
-.show-card {
-  width: 80%;
-  height: 100%;
-  margin-top: 10px;
-  border: none;
-  margin-bottom: 50px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* CSS COMPONENT -- Banner.jsx */
+.banner_slide {
+  position: relative;
+  background-size: cover;
+  background-position: relative center;
+  width: auto;
+  height: 80vh;
+  margin-bottom: 10px;
 }
+.slide_baner-image {
+  width: 100%;
+  height: 80vh;
+}
+/* CSS COMPONENT -- AllDog.jsx -- AllCat.jsx*/
 .page-home_alldog-title {
+  border-radius: 20px;
+  border: 1px solid;
   background-image: linear-gradient(
-      to left top,
-      rgba(39, 238, 232, 0.5) 40%,
-      rgba(81, 207, 252, 0.5)
+      180deg,
+      rgba(255, 255, 0, 0.7),
+      rgba(255, 255, 141, 0.1)
     ),
     url("../image/banner1.jpg");
   width: 100%;
@@ -32,34 +42,204 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(255, 218, 185, 0.4) 0px 2px 1px,
+    rgba(255, 228, 181, 0.4) 0px 4px 2px, rgba(250, 250, 210, 0.4) 0px 8px 4px,
+    rgba(255, 250, 205, 0.4) 0px 16px 8px,
+    rgba(255, 255, 224, 0.4) 0px 32px 16px;
 }
 .page-home_allcat-title {
+  border-radius: 20px;
+  border: 1px solid;
   background-image: linear-gradient(
-      to left top,
-      rgba(39, 238, 232, 0.5) 40%,
-      rgba(81, 207, 252, 0.5)
+      180deg,
+      rgba(255, 255, 0, 0.7),
+      rgba(255, 255, 141, 0.1)
     ),
     url("../image/banner2.jpg");
   width: 100%;
   height: 30vh;
-  background-size: cover;
   /* full backgroud*/
+  background-size: cover;
   background-position: center;
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(255, 218, 185, 0.4) 0px 2px 1px,
+    rgba(255, 228, 181, 0.4) 0px 4px 2px, rgba(250, 250, 210, 0.4) 0px 8px 4px,
+    rgba(255, 250, 205, 0.4) 0px 16px 8px,
+    rgba(255, 255, 224, 0.4) 0px 32px 16px;
 }
 .page-home_alldog-title h4,
 .page-home_allcat-title h4 {
   font-size: 36px;
   font-weight: 600;
-  color: rgb(9, 92, 103);
-  padding-top: 100px;
+  color: rgb(63, 91, 95);
+  padding-top: 60px;
   padding-left: 100px;
+  font-family: "Courier New", Courier, monospace;
 }
+/* Show all card for list Dog and list Cat*/
+.container-fluid .show-card {
+  max-width: 1140px;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  border: none;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cards {
+  border: none;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.card_pet {
+  border-radius: 20px;
+  border: 0px solid;
+  position: relative;
+  transform: scale(1);
+  transition: all 0.5s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: fit-content;
+  border-top: 2px solid rgb(255, 255, 0);
+  border-left: 2px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0, 0.7) 1px 1px 1px 1px,
+    rgba(85, 85, 85, 0.7) 0px 4px 2px, rgba(54, 54, 54, 0.6) 0px 8px 4px,
+    rgba(112, 112, 112, 0.5) 0px 16px 8px,
+    rgba(137, 137, 137, 0.4) 0px 32px 16px;
+}
+.cards:hover .card_pet {
+  transform: scale(1.1);
+  border-top: 4px solid rgb(255, 255, 0);
+  border-left: 4px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0) 1px 1px 1px 1px, rgba(85, 85, 85, 0.3) 0px 2px 2px,
+    rgba(54, 54, 54, 0.2) 0px 4px 4px, rgba(112, 112, 112, 0.1) 0px 8px 8px,
+    rgba(137, 137, 137, 0) 0px 16px 16px;
+}
+.cards:hover .button-add-to-cart {
+  display: block;
+}
+.card_pet-image {
+  border-radius: 20px;
+  border: 1px solid;
+  width: 99%;
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+}
+.card_pet-name {
+  color: rgb(52, 52, 5);
+  font-size: 16px;
+  text-align: center;
+  height: 30px;
+  font-weight: 600;
+}
+.card-title_pet {
+  border-radius: 10px;
+  border: 1px solid;
+  border-top: 2px solid rgb(255, 255, 0);
+  border-left: 2px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px 1px,
+    rgba(85, 85, 85, 0.1) 0px 4px 2px, rgba(54, 54, 54, 0) 0px 8px 4px,
+    rgba(112, 112, 112, 0.08) 0px 16px 8px,
+    rgba(137, 137, 137, 0.04) 0px 32px 16px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.cards:hover .card-title_pet {
+  border-top: 4px solid rgb(255, 255, 0);
+  border-left: 4px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0) 1px 1px 0px 1px, rgba(85, 85, 85, 0.3) 0px 2px 2px,
+    rgba(54, 54, 54, 0.2) 0px 4px 4px, rgba(112, 112, 112, 0.1) 0px 8px 8px,
+    rgba(137, 137, 137, 0) 0px 16px 16px;
+}
+.card_pet-oldprice {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: rgb(255, 69, 0);
+  justify-content: center;
+  text-align: center;
+}
+.card_pet-newprice {
+  font-size: 14px;
+  color: rgb(12, 12, 12);
+  padding: 0px 10px;
+}
+.button-add-to-cart {
+  position: absolute;
+  background-color: rgb(255, 255, 0);
+  color: rgb(255, 255, 255);
+  width: 80%;
+  height: 50px;
+  font-weight: 00;
+  border: none;
+  font-size: 12px;
+  margin-top: -20px;
+  margin-bottom: 6px ;
+  margin-left: 18px;
+  border-top: 2px solid rgb(255, 255, 0);
+  border-left: 2px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0, 0.7) 1px 1px 1px 1px,
+    rgba(85, 85, 85, 0.1) 0px 4px 2px, rgba(54, 54, 54, 0) 0px 8px 4px,
+    rgba(112, 112, 112, 0.08) 0px 16px 8px,
+    rgba(137, 137, 137, 0.04) 0px 32px 16px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid;
+  background-image: linear-gradient(90deg, rgb(59, 59, 59), rgb(68, 68, 65));
+}
+.button-add-to-cart:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 0),
+    rgb(255, 248, 53)
+  );
+  border: none;
+  background-color: rgba(255, 255, 0);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+/* CSS COMPONENT -- Pagination.jsx */
+.pagination {
+  position: relative;
+  margin-top: 60px;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid rgb(255, 255, 0);
+  border-left: 2px solid rgb(255, 255, 0);
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px 1px,
+    rgba(85, 85, 85, 0.1) 0px 4px 2px, rgba(54, 54, 54, 0) 0px 8px 4px,
+    rgba(112, 112, 112, 0.08) 0px 16px 8px,
+    rgba(137, 137, 137, 0.04) 0px 32px 16px;
+  width: fit-content;
+  width: auto;
+  height: auto;
+}
+.pagination-prev,
+.pagination-next,
+.pagination-item {
+  margin: 3px auto;
+  width: 50%;
+  height: 50px;
+  color: rgb(7, 7, 7);
+  border-radius: 4%;
+  background: rgb(48, 48, 45);
+  border: 3px solid #f2ff41;
+  text-align: center;
+}
+/* CSS COMPONENT -- .jsx */
+/* CSS COMPONENT -- .jsx */
+/* CSS COMPONENT -- .jsx */

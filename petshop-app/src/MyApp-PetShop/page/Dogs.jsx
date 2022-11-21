@@ -26,7 +26,6 @@ export default function Dogs({
   };
 
   useEffect(() => {
-    console.log(selectedDog, "selectedDog");
     const result = listDog.filter(
       (el) =>
         (el.typeOf === selectedDog &&
@@ -39,32 +38,34 @@ export default function Dogs({
   return (
     <>
       {" "}
-      <div className="page-dog">
-        {showInformationProduct ? (
-          <>
+      {showInformationProduct ? (
+        <div className="page-dogs">
+          {" "}
+          <div className="title-page-dog">
             {" "}
             <h3>HELLO. I'M DOG!</h3>
-            <SearchDog
-              inputDog={inputDog}
-              onSearchDog={onSearchDog}
-              selectedDog={selectedDog}
-              menuDogs={menuDogs}
-              onSelectDog={onSelectDog}
-            />
-            <ListDog
-              dogs={dogs}
-              onClickAddCart={onClickAddCart}
-              onHandleShowInfomationDog={onHandleShowInfomationDog}
-            />
-          </>
-        ) : (
-          <InformationPet
-            onClickAddCart={onClickAddCart}
-            setShowInformationProduct={setShowInformationProduct}
-            showInforCard={showInforCard}
+          </div>
+          <SearchDog
+            inputDog={inputDog}
+            onSearchDog={onSearchDog}
+            selectedDog={selectedDog}
+            menuDogs={menuDogs}
+            onSelectDog={onSelectDog}
           />
-        )}
-      </div>
+          <ListDog
+            dogs={dogs}
+            onClickAddCart={onClickAddCart}
+            onHandleShowInfomationDog={onHandleShowInfomationDog}
+          />
+        </div>
+      ) : (
+        <InformationPet
+          onClickAddCart={onClickAddCart}
+          setShowInformationProduct={setShowInformationProduct}
+          showInforCard={showInforCard}
+        />
+      )}
+      <Footer />
     </>
   );
 }

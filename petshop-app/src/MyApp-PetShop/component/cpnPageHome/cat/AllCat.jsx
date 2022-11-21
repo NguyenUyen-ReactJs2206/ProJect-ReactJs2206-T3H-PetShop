@@ -8,15 +8,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled.input`
-  border: 1px solid none;
-  border-radius: 2px;
-  margin-right: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-left: 20px;
   padding: 5px;
 `;
 const Select = styled.select`
-  border: 1px solid none;
-  border-radius: 2px;
-  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 8px;
+  margin-left: 20px;
 `;
 export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
   const [cats, setCats] = useState([...listCat]);
@@ -101,7 +102,6 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
       (paginationCat.currentPageCat - 1) * PAGINATION_CAT.LIMIT_CAT,
       paginationCat.currentPageCat * PAGINATION_CAT.LIMIT_CAT
     );
-    console.log(newCat);
     setCatPage((pre) => (pre = newCat));
   }, [cats, paginationCat.currentPageCat, paginationCat.totalPageCat]);
 
@@ -130,9 +130,8 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
       <div className="container show-card">
         <div className="row ">
           {catPage.map((item, index) => (
-            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+            <div className="col-xl-3 col-lg-3 col-sm-3 col-6 cards" key={index}>
               <Card
-                key={index}
                 onClick={() => onHandleShowInfomationCat(item)}
                 className="card_pet"
               >
@@ -143,13 +142,13 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
                 />
                 <Card.Body>
                   <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                  <Card.Text>
+                  <Card.Title className="card-title_pet">
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
                       Price Current: {item.priceCurrent}$
                     </span>
-                  </Card.Text>
+                  </Card.Title>
                 </Card.Body>
               </Card>
               <ToastContainer />

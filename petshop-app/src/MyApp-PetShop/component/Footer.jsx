@@ -4,11 +4,11 @@ import "../css/footer.css";
 
 export default function Footer() {
   return (
-    <div class="footer-clean">
+    <div className="footer-clean">
       <footer>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-sm-4 col-md-3 item">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-sm-4 col-md-3 item">
               <h3>PRODUCT</h3>
               <ul>
                 <li>
@@ -19,7 +19,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="col-sm-4 col-md-3 item">
+            <div className="col-sm-4 col-md-3 item">
               <h3>ABOUT PETSHOP</h3>
               <ul>
                 <li>
@@ -30,34 +30,34 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="col-sm-4 col-md-3 item">
+            <div className="col-sm-4 col-md-3 item">
               <h3>PURCHASE POLICY</h3>
               <ul>
                 <li>
-                  <a href="#">Installment purchase 0%</a>
+                  <Link to="/">Installment purchase 0%</Link>
                 </li>
                 <li>
-                  <a href="#">Return and exchange warranty</a>
+                  <Link to="/">Return and exchange warranty</Link>
                 </li>
                 <li>
-                  <a href="#">Delivery, receipt, payment</a>
+                  <Link to="/">Delivery, receipt, payment</Link>
                 </li>
               </ul>
             </div>
-            <div class="col-lg-3 item social">
-              <a href="#">
-                <i class="icon ion-social-facebook"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-snapchat"></i>
-              </a>
-              <a href="#">
-                <i class="icon ion-social-instagram"></i>
-              </a>
-              <p class="copyright">PETSHOP © 2022</p>
+            <div className="col-lg-3 item social">
+              <Link to="/">
+                <i className="icon ion-social-facebook"></i>
+              </Link>
+              <Link to="/">
+                <i className="icon ion-social-twitter"></i>
+              </Link>
+              <Link to="/">
+                <i className="icon ion-social-snapchat"></i>
+              </Link>
+              <Link to="/">
+                <i className="icon ion-social-instagram"></i>
+              </Link>
+              <p className="copyright">PETSHOP © 2022</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import "../.././css/search.css";
 
 export default function SearchCat({
   onSearchCat,

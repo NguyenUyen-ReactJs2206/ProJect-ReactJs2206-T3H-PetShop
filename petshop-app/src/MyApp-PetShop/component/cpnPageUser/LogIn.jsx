@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebook, FaGoogle, FaTiktok, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function LogIn({setShowForm}) {
+export default function LogIn({ setShowForm }) {
   return (
     <div className="container-fluid ">
       <div className="form-login">
@@ -30,12 +30,15 @@ export default function LogIn({setShowForm}) {
                 </div>
                 <div className="input-form">
                   <p>
-                    Do not have an account? <Link to="/user/sign-up" onClick={()=>setShowForm(false)}>Sign up</Link>
+                    Do not have an account?{" "}
+                    <Link to="/user/sign-up" onClick={() => setShowForm(false)}>
+                      Sign up
+                    </Link>
                   </p>
                 </div>
               </form>
               <h3>Login with social network</h3>
-              <ul class="icon-login">
+              <ul className="icon-login">
                 <li>
                   <FaFacebook />
                 </li>

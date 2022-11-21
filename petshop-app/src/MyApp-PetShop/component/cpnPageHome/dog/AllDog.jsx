@@ -8,15 +8,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Input = styled.input`
-  border: 1px solid none;
-  border-radius: 2px;
-  margin-right: 10px;
+  margin-left: 20px;
   padding: 5px;
+  border-radius: 10px;
+  border: 1px solid;
 `;
 const Select = styled.select`
-  border: 1px solid none;
-  border-radius: 2px;
-  padding: 5px;
+  padding: 8px;
+  margin-left: 20px;
+  border-radius: 10px;
+  border: 1px solid;
 `;
 export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
   const [dogs, setDogs] = useState([...listDog]);
@@ -104,7 +105,6 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
       (paginationDog.currentPageDog - 1) * PAGINATION_DOG.LIMIT_DOG,
       paginationDog.currentPageDog * PAGINATION_DOG.LIMIT_DOG
     );
-    console.log(newDog);
     setDogPage((pre) => (pre = newDog));
   }, [dogs, paginationDog.currentPageDog, paginationDog.totalPageDog]);
 
@@ -130,12 +130,11 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
           </Select>
         </div>
       </div>
-      <div className="container show-card">
+      <div className="container-fluid show-card">
         <div className="row ">
-          {dogPage.map((item) => (
-            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+          {dogPage.map((item, index) => (
+            <div className="col-xl-3 col-md-3 col-sm-3 col-6 cards" key={index}>
               <Card
-                key={item.id}
                 onClick={() => onHandleShowInfomationDog(item)}
                 className="card_pet"
               >
@@ -146,13 +145,13 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
                 />
                 <Card.Body>
                   <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                  <Card.Text className="card-text_pet">
+                  <Card.Title className="card-title_pet">
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
                       Price Current: {item.priceCurrent}$
                     </span>
-                  </Card.Text>
+                  </Card.Title>
                 </Card.Body>
               </Card>
               <ToastContainer />

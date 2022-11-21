@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import "../.././css/listpet.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,11 +12,12 @@ export default function ListDog({
     <div className="container show-card">
       <div className="row">
         {dogs.map((item, index) => {
-          console.log("item", item);
           return (
-            <div className="col-xl-3 col-lg-3 col-sm-6 col-6 cards ">
+            <div
+              className="col-xl-3 col-lg-3 col-sm-4 col-6 cards "
+              key={index}
+            >
               <Card
-                key={index}
                 onClick={() => onHandleShowInfomationDog(item)}
                 className="card_pet"
               >
@@ -28,13 +28,13 @@ export default function ListDog({
                 />
                 <Card.Body>
                   <Card.Title className="card_pet-name">{item.name}</Card.Title>
-                  <Card.Text className="card-text_pet">
+                  <Card.Title className="card-title_pet">
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
                       Price Current: {item.priceCurrent}$
                     </span>
-                  </Card.Text>
+                  </Card.Title>
                 </Card.Body>
               </Card>
               <ToastContainer />

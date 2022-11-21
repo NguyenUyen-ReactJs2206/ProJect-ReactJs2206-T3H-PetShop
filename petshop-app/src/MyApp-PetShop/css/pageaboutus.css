@@ -1,115 +1,339 @@
-.about-us {
-  margin-top: 80px;
-}
-.blog {
-  position: relative;
-  width: 22em;
-  height: 30em;
 
-  background: url(https://cache.desktopnexus.com/thumbseg/25/25727-bigthumbnail.jpg)
-    no-repeat;
-  background-size: 22em 30em;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-  margin: auto;
-  overflow: hidden;
+.page-about-us {
+  margin-top: 50px;
 }
-.blog * {
-  position: relative;
-  z-index: 2;
-}
-.blog:hover .color-overlay {
-  background: rgba(74, 100, 114, 0.8);
-}
-.blog:hover .info {
-  bottom: -3em;
-  opacity: 1;
-}
-.blog,
-.color-overlay {
-  border-radius: 0.7em;
-}
-.color-overlay {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  transition: 0.7s background;
-  background: rgba(74, 100, 114, 0.3);
-  z-index: 1;
-}
-
-.title-box {
-  display: inline-block;
+.banner-about-us {
+  background-image: linear-gradient(
+      to right top,
+      rgba(2, 33, 64, 0.5) 50%,
+      rgba(45, 95, 93, 0.8)
+    ),
+    url("../image/bannerPageAboutUs.jpg");
   width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+.logo-petshop {
+  width: 10vh;
+  height: 10vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  animation-name: move;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+@keyframes move {
+  0% {
+    top: 0px;
+    left: 50px;
+  }
+  25% {
+    top: 0px;
+    left: 1300px;
+  }
+  50% {
+    top: 600px;
+    left: 1300px;
+  }
+  75% {
+    top: 600px;
+    left: 100px;
+  }
+  100% {
+    top: 0px;
+    left: 50px;
+    background-color: blue;
+  }
+}
+.box-content {
   text-align: center;
-  margin-top: 2em;
 }
-.title-box hr {
-  margin-top: -0.4em;
-  margin-bottom: 1em;
-  width: 5em;
-  height: 0.25em;
-  box-sizing: content-box;
-  border: none;
-  background: #d0bc57;
+.title h3 {
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  animation-name: MoveTitle, reSizeTitle, colorTittle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
-h3 {
-  display: inline-block;
+@keyframes MoveTitle {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 100px;
+  }
+}
+@keyframes reSizeTitle {
+  from {
+    width: 100%;
+    height: 50px;
+    font-size: 68px;
+  }
+  to {
+    width: 100%;
+    height: 50px;
+  }
+}
+@keyframes colorTittle {
+  from {
+    color: rgb(243, 240, 139);
+    font-size: 48px;
+  }
+  to {
+    color: rgb(226, 250, 7);
+  }
+}
+.content {
+  margin-top: 20px;
+}
+.text-content p {
+  font-size: 32px;
+  color: white;
   font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 1.4em;
+}
+.text-content-phone {
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+}
+.text-content-facebook {
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+}
+.icon-phone {
+  background-color: rgb(15, 207, 88);
+  font-size: 40px;
+  border-radius: 50%;
+}
+.text-content-facebook span,
+.text-content-phone span {
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(242, 255, 1);
+  font-weight: 500;
+}
+.text-content-facebook span:hover,
+.text-content-phone span:hover {
+  text-decoration: underline;
+  color: rgb(27, 175, 243);
+}
+.icon-facebook {
+  font-size: 40px;
+  color: rgb(70, 156, 243);
+}
+/*CSS COMPONENT --  ShopIntroduction.jsx */
+.shop-introduction {
+  margin-top: 10px;
+}
+.shop-introduction-pet h3 {
+  font-weight: 600;
+  text-align: center;
+  text-decoration: double;
+  font-size: 48px;
+  color: rgba(2, 2, 2, 0.92);
+  background-image: linear-gradient(to bottom, #9cff23 50%, #9ff5ff);
+  border-radius: 10px;
+}
+.list-pet-cute {
   text-align: center;
 }
-.intro {
-  width: 170px;
-  margin: 0 auto;
-  color: #fff;
-  font-family: "Droid Serif", serif;
-  font-size: 13px;
-  font-style: italic;
-  line-height: 18px;
+.list-image {
+  width: 100%;
+  height: 200px;
 }
 
-.info {
-  font-family: "Droid Serif", serif;
-  font-size: 1.2em;
-  color: #ddd;
-  line-height: 1.1em;
-  padding: 0 2em;
-  position: relative;
-  bottom: -4em;
-  opacity: 0;
-  background: transparent;
-  transition: opacity 0.3s, bottom 0.3s;
+/* FEATURED PRODUCTS ---CSS COMPONENT -- PetRelated.jsx */
+.container-fluid {
+  max-width: auto;
+}
+.carousel-related {
+  margin-top: 30px;
+  background-color: rgba(255, 255, 224);
+  text-align: center;
+}
+.product-related_slide {
+  margin: 20px 20px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 88, 0.6) 50%,
+    rgb(255, 255, 224)
+  );
+  border-radius: 20px;
+}
+.slide_product_related {
+  width: 80%;
+  border: none;
+  background-color: white;
+  height: fit-content;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.footer {
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
+.featured-products-title {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 88, 0.8) 50%,
+    rgb(255, 255, 224)
+  );
+  text-align: center;
+  height: fit-content;
+  font-weight: 800;
+  color: rgb(204, 197, 63);
+}
+.featured-products-title h5 {
+  margin: 60px 0px;
+  font-weight: 800;
+  font-size: 40px;
+}
+@media (min-width: 1500px) {
+  .product-related_slide {
+    width: 70%;
+  }
+}
+.readmore-all-pet-related h6 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(4, 125, 255);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: start;
+}
+.readmore-all-pet-related h6:hover {
+  text-decoration: underline;
+  color: rgb(3, 81, 164);
+}
+
+/*CSS COMPONENT --  ReadAllPtRelated */
+.show-card-pet-related {
+  background-image: linear-gradient(
+    to bottom,
+    #e4ff4b 20%,
+    #f0ff99 30%,
+    #9ff5ff
+  );
+}
+.show-card-pet-related h3 {
+  font-size: 48px;
+  font-weight: 600;
+  padding-top: 20px;
+  text-align: center;
+}
+.card-grid {
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 40px;
+  list-style: none;
+}
+.card {
+  background-color: var(--bg-offset);
+  padding: 0px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.card.card-content h2 {
+  display: block;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: none;
+  overflow: visible;
+}
+.card-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.card-image img {
+  margin-top: -13px;
+  height: 100%;
   width: 100%;
-  height: 10em;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
-  border-radius: 0 0 0.7em 0.7em;
+  object-fit: cover;
+  object-position: center;
+  background-size: cover;
+  background-position: center;
+}
+.card-content {
+  padding: 20px 15px;
+}
+.card-content h2 {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid red;
+  height: 50px;
+  margin-top: -20px;
+}
+.card-list {
+  margin-top: 16px;
+  list-style: none;
+  font-size: 12px;
+  text-align: center;
+}
+.card-list-sale {
+  margin-top: 16px;
+  list-style: none;
+  font-size: 12px;
+  text-align: center;
+}
+.card-list-sale span {
+  text-decoration: line-through;
+}
+.card-list li {
+  color: var(--text);
+  margin-top: 8px;
+}
+.card-list li span {
+  color: var(--gray);
 }
 
-.footer > .icon-holder {
-  position: absolute;
-  bottom: 0;
-  height: 3em;
-  width: 100%;
-  display: inline-block;
-  font-size: 1.2em;
-  padding: 0 2em;
+.add-to-cart-pet-related {
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 5px;
+}
+.readless-all-pet-related h6 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(4, 125, 255);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: start;
+}
+.readless-all-pet-related h6:hover {
+  text-decoration: underline;
+  color: rgb(3, 81, 164);
 }
 
-.icon-holder i {
-  color: #d0bc57;
+/* CSS copmonent -- ContentAboutUs.jsx */
+.content-about-us {
+  height: fit-content;
+  margin-bottom: 100px;
+}
+.content-about-us h3 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  width: 300px;
+  border-bottom: 4px solid rgb(2, 238, 255);
+}
+.content-about-us p {
+  font-size: 28px;
+  text-align: center;
 }
 
-.icon-holder span,
-h3 {
-  color: #accff0;
-}

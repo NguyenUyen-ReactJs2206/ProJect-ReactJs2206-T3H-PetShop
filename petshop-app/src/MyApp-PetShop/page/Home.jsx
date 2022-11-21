@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Banner from "../component/cpnPageHome/Banner";
 import ".././css/home.css";
 import AllDog from "../component/cpnPageHome/dog/AllDog";
@@ -19,14 +19,17 @@ export default function Home({
       {showInformationProduct ? (
         <>
           <Banner />
-          <AllDog
-            onClickAddCart={onClickAddCart}
-            onHandleShowInfomationDog={onHandleShowInfomationDog}
-          />
-          <AllCat
-            onClickAddCart={onClickAddCart}
-            onHandleShowInfomationCat={onHandleShowInfomationCat}
-          />
+          <div className="container-fluid home-page-content">
+            {" "}
+            <AllDog
+              onClickAddCart={onClickAddCart}
+              onHandleShowInfomationDog={onHandleShowInfomationDog}
+            />
+            <AllCat
+              onClickAddCart={onClickAddCart}
+              onHandleShowInfomationCat={onHandleShowInfomationCat}
+            />{" "}
+          </div>
         </>
       ) : (
         <InformationPet

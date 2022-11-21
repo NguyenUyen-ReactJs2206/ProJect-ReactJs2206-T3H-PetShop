@@ -1,15 +1,12 @@
-* {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0;
-}
 .infor-pet {
   height: 100vh;
+  margin-top: 50px;
 }
 span.come-back-home {
   cursor: pointer;
   font-size: 14px;
-  color: rgb(22, 138, 99);
+  color: rgb(113, 107, 3);
+  font-weight: 500;
 }
 span.come-back-home:hover {
   color: rgb(2, 40, 28);
@@ -42,7 +39,7 @@ span.come-back-home:hover {
   height: 0.25em;
   box-sizing: content-box;
   border: none;
-  background: rgb(55, 196, 149);
+  background: rgb(11, 11, 11);
 }
 .title-information-box h4 {
   display: inline-block;
@@ -50,10 +47,12 @@ span.come-back-home:hover {
   letter-spacing: 2px;
   font-size: 2em;
   color: rgb(7, 27, 65);
-  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+
 }
 .intro-pet {
   color: red;
+  font-weight: 600;
 }
 .button-box {
   display: flex;
@@ -69,28 +68,29 @@ table.table-intro {
   height: 4em;
   width: fit-content;
   text-align: center;
-  padding: 1em;
+  padding: 0.5em;
 }
 button.add-cart {
   margin-top: 20px;
   width: 100%;
   height: 3em;
   color: black;
-  background-color: aquamarine;
+  background-color: rgb(251, 255, 0);
   border: none;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 10px;
 }
 button.add-cart:hover {
-  background-color: rgb(69, 209, 162);
+  background-color: rgb(255, 243, 10);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 @media (max-width: 768px) {
   .image-box img {
-    width: 70%;
+    width: 100%;
     height: 20em;
   }
   .title-information-box {
@@ -98,6 +98,19 @@ button.add-cart:hover {
     width: 80%;
     text-align: start;
     margin-top: 0em;
+  }
+  .title-information-box h4 {
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    color: rgb(7, 27, 65);
+    font-weight: 600;
+  
+  }
+  .intro-pet {
+    color: red;
+    font-weight: 600;
   }
   .table-intro tr,
   td {

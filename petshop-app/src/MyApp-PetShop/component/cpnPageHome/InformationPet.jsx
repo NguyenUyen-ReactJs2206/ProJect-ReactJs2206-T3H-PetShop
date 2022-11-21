@@ -9,7 +9,6 @@ export default function InformationPet({
   showInforCard,
   onClickAddCart,
 }) {
-  console.log(showInforCard, "aaaasssssssssss");
   return (
     <div className="infor-pet">
       <span
@@ -62,6 +61,7 @@ export default function InformationPet({
             </button>
           </div>
         </div>
+        <div></div>
       </div>
     </div>
   );

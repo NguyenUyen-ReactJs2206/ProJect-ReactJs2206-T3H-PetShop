@@ -3,16 +3,22 @@
   margin: 0 auto;
   padding: 0;
 }
-.page-dog {
+.page-dogs {
+  padding-top: 50px;
+  height: fit-content;
+  margin-bottom: 50px;
+}
+
+.title-page-dog {
   padding-top: 100px;
   background-image: linear-gradient(
-      to left top,
-      rgba(39, 238, 232, 0.5) 40%,
-      rgba(81, 207, 252, 0.5)
+      180deg,
+      rgba(255, 255, 0, 0.7),
+      rgba(255, 255, 141, 0.1)
     ),
     url("../image/banner1.jpg");
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   background-size: cover;
   /* full backgroud*/
   background-position: center;
@@ -21,10 +27,66 @@
   text-align: center;
 }
 
-.page-dog h3 {
+.title-page-dog h3 {
   font-size: 36px;
   font-weight: 600;
   color: rgb(9, 92, 103);
-  padding-top: 150px;
+  margin-top: 100px;
   padding-left: 100px;
+  font-family: "Courier New", Courier, monospace;
+}
+/* Search and dropdown */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: auto;
+}
+.search-input {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xNS44NTMgMTYuNTZjLTEuNjgzIDEuNTE3LTMuOTExIDIuNDQtNi4zNTMgMi40NC01LjI0MyAwLTkuNS00LjI1Ny05LjUtOS41czQuMjU3LTkuNSA5LjUtOS41IDkuNSA0LjI1NyA5LjUgOS41YzAgMi40NDItLjkyMyA0LjY3LTIuNDQgNi4zNTNsNy40NCA3LjQ0LS43MDcuNzA3LTcuNDQtNy40NHptLTYuMzUzLTE1LjU2YzQuNjkxIDAgOC41IDMuODA5IDguNSA4LjVzLTMuODA5IDguNS04LjUgOC41LTguNS0zLjgwOS04LjUtOC41IDMuODA5LTguNSA4LjUtOC41eiIvPjwvc3ZnPg==");
+  background-size: 16px 16px;
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  padding: 1em 2em;
+  padding-left: 2.8em;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 10px 0px inset;
+  border: none;
+  position: relative;
+  width: 300px;
+  border-radius: 20px;
+}
+.search-input:hover {
+  border: none;
+  background-color: rgb(255, 255, 224);
+}
+#dropdown-basic {
+  border-radius: 20px;
+  color: rgb(5, 5, 5);
+  background-color: rgb(255, 255, 131);
+  margin-left: -300px;
+}
+#dropdown-basic:hover {
+  color: rgb(7, 7, 7);
+  background-color: rgb(255, 255, 0);
+}
+.dropdown-menu {
+  margin-top: -3px;
+  background-color: rgb(255, 255, 224);
+}
+.dropdown-item {
+  background-color: rgb(255, 255, 224);
+}
+.dropdown-item:hover {
+  background-color: rgb(242, 242, 141);
+}
+@media (max-width: 992px) {
+  .search-input {
+    margin-left: -30px;
+    width: 200px;
+  }
+  #dropdown-basic {
+    margin-left: -100px;
+  }
 }

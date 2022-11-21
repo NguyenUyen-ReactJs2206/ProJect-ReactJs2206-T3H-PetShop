@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import Dogs from "./page/Dogs";
@@ -9,11 +9,11 @@ import Cart from "./page/Cart";
 import AboutUs from "./page/AboutUs";
 import User from "./page/User";
 import { listCat, listDog } from "./api";
+import BoxContact from "./component/BoxContact";
 
 export default function PetShop() {
   //state save item when add to cart
   const [cartItems, setCartItems] = useState([]);
-
   //menu select for navbar
   const menuDogs = useMemo(() => menuDog(), []);
   const menuCats = useMemo(() => menuCat(), []);
@@ -65,7 +65,15 @@ export default function PetShop() {
           countCartItems={cartItems.length}
           setShowInformationProduct={setShowInformationProduct}
         />
+        <BoxContact/>
         <Routes>
+          <Route
+            path="/contact"
+            element={
+              <BoxContact
+              />
+            }
+          ></Route>
           <Route
             path="/"
             element={
@@ -109,9 +117,10 @@ export default function PetShop() {
             }
           ></Route>
 
-          {menuDogs.map((Val) => (
+          {menuDogs.map((Val, index) => (
             <Route
               path={`/dogs/${Val}`}
+              key={index}
               element={
                 <Dogs
                   selectedDog={selectedDog}
@@ -140,9 +149,10 @@ export default function PetShop() {
             }
           ></Route>
 
-          {menuCats.map((Val) => (
+          {menuCats.map((Val, index) => (
             <Route
               path={`/cats/${Val}`}
+              key={index}
               element={
                 <Cats
                   selectedCat={selectedCat}
@@ -156,19 +166,13 @@ export default function PetShop() {
               }
             ></Route>
           ))}
-          <Route path="/about-us" element={<AboutUs />}></Route>
+          <Route
+            path="/about-us"
+            element={<AboutUs onClickAddCart={onClickAddCart} />}
+          ></Route>
           <Route
             path="/cart"
-            element={
-              <Cart
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                onClickAddCart={onClickAddCart}
-                onHandleShowInfomationCat={onHandleShowInfomationCat}
-                onHandleShowInfomationDog={onHandleShowInfomationDog}
-                showInforCard={showInforCard}
-              />
-            }
+            element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}
           ></Route>
           <Route path="/user" element={<User />}></Route>
           <Route path="/user/log-in" element={<User />}></Route>

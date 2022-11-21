@@ -10,7 +10,7 @@ export default function Navbar({
   menuCats,
   onSelectCat,
   countCartItems,
-  setShowInformationProduct,
+  setShowInformationProduct
 }) {
   return (
     <div className="container-fuid">
@@ -37,8 +37,8 @@ export default function Navbar({
                 </span>
               </Link>
               <ul className="sub-menu">
-                {menuDogs.map((Val) => (
-                  <li>
+                {menuDogs.map((Val, index) => (
+                  <li key={index}>
                     <Link to={`/dogs/${Val}`} onClick={() => onSelectDog(Val)}>
                       {Val}
                     </Link>
@@ -55,8 +55,8 @@ export default function Navbar({
               </Link>
 
               <ul className="sub-menu">
-                {menuCats.map((Val) => (
-                  <li>
+                {menuCats.map((Val, index) => (
+                  <li key={index}>
                     <Link to={`/cats/${Val}`} onClick={() => onSelectCat(Val)}>
                       {Val}
                     </Link>
@@ -69,7 +69,7 @@ export default function Navbar({
             </li>
             <li>
               {" "}
-              <Link to="/cart">
+              <Link to="/cart" onClick={() => setShowInformationProduct(true)}>
                 <FaCartPlus className="cart-shopping" />
                 {countCartItems ? (
                   <>

@@ -46,7 +46,7 @@ export default function SignUp({ setShowForm }) {
                 </div>
               </form>
               <h3>Login with social network</h3>
-              <ul class="icon-login">
+              <ul className="icon-login">
                 <li>
                   <FaFacebook />
                 </li>

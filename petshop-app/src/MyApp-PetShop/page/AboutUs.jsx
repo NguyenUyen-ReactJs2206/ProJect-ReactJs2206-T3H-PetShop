@@ -1,40 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import BannerAboutUs from "../component/cpnPageAboutUs/BannerAboutUs";
+import ContentAboutUs from "../component/cpnPageAboutUs/ContentAboutUs";
+import PetRelated from "../component/cpnPageAboutUs/PetRelated";
+import ReadAllPetRelated from "../component/cpnPageAboutUs/ReadAllPetRelated";
+import ShopIntroduction from "../component/cpnPageAboutUs/ShopIntroduction";
+import Footer from "../component/Footer";
 import "../css/pageaboutus.css";
 
-export default function AboutUs() {
+export default function AboutUs({ onClickAddCart }) {
+  const [showAllPetRelated, setShowAllPetRelated] = useState(true);
   return (
-    <div className="about-us">
-      <div className="row">
-        <div className="blog">
-          <div className="title-box">
-            <h3>SPRING FEVER</h3>
-            <hr />
-            <div className="intro">
-              Yllamco laboris nisi ut aliquip ex ea commodo.
-            </div>
-          </div>
-          <div className="info">
-            <span>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim.
-            </span>
-          </div>
-          <div className="footer">
-            <div className="icon-holder">
-              <span>
-                <i className="fa fa-comment-o"></i>
-                <span>12</span>
-                <space></space>
-                <i className="fa fa-calendar"></i>
-                <span>03.12.2015</span>
-              </span>
-            </div>
-          </div>
-
-          <div className="color-overlay"></div>
-        </div>
-      </div>
+    <div className="page-about-us">
+      <BannerAboutUs />
+      <ShopIntroduction />
+      {showAllPetRelated ? (
+        <PetRelated setShowAllPetRelated={setShowAllPetRelated} />
+      ) : (
+        <ReadAllPetRelated
+          setShowAllPetRelated={setShowAllPetRelated}
+          onClickAddCart={onClickAddCart}
+        />
+      )}
+      <ContentAboutUs/>
+      <Footer/>
     </div>
   );
 }

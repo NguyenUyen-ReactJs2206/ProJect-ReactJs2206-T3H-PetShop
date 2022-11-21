@@ -2,10 +2,15 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  font-family: sans-serif;
+  font-size: 18px;
 }
-.container-fluid {
-  max-width: 100%;
+/* CSS COMPONENT -- Shopcart.jsx */
+.page-cart-inclue {
+  padding-top: 50px;
+}
+.page-cart {
+  height: fit-content;
+  margin-bottom: 50px;
 }
 .checkout-cart-title {
   width: auto;
@@ -13,13 +18,17 @@
 }
 .checkout-cart-title h3 {
   padding: 40px 0px 10px 10px;
+  color: rgba(215, 215, 50, 0.8);
+  font-weight: 800;
+  font-size: 36px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .checkout-cart-right {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 224);
   border-left: white 2px solid;
 }
 .checkout-cart-left {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 224);
   border-right: white 2px solid;
 }
 .page-cart {
@@ -33,7 +42,6 @@ thead tr th {
   color: white;
 }
 /* Css tbody-table into Cart**/
-
 tbody tr {
   border-top: 0.6px solid rgb(162, 160, 160);
 }
@@ -75,7 +83,7 @@ span.cart-item-oldprice {
   color: rgb(238, 141, 36);
 }
 
-/*Css cpn ShopCart*/
+/* Css product added */
 .cart-increase-amount,
 .cart-decrease-amount {
   width: 30px;
@@ -105,7 +113,7 @@ span.cart-item-oldprice {
   color: black;
 }
 
-/* tbody bảng phía dưới */
+/* tbody table under */
 .number_priceold,
 .number_discount,
 .number_toltal-payment {
@@ -116,30 +124,33 @@ td.number_toltal-payment {
   font-size: 20px;
   font-weight: 50px;
 }
-
-tr.payment {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  color: black;
-  font-weight: 700;
-  width: 100%;
-  border: none;
-}
-.payment input.make-a-payment {
+.payment .make-a-payment {
   text-align: center;
   width: 100%;
-  margin-left: 20px;
-  background-color: rgba(67, 238, 232, 0.8);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  height: 200%;
+  font-size: 24px;
+  font-weight: 600;
+  height: fit-content;
+  background-image: linear-gradient(90deg, rgb(59, 59, 59), rgb(68, 68, 65));
+  box-shadow: rgb(38, 57, 77) 0px 10px 20px -10px;
+  border-radius: 20px;
+  color: azure;
 }
-.payment input.make-a-payment:hover {
+.payment .make-a-payment:hover {
   cursor: pointer;
-  background-color: rgb(6, 209, 179);
+  background-color: rgb(242, 255, 0);
+  background-image: linear-gradient(
+    180deg,
+    rgb(255, 220, 46),
+    rgb(255, 255, 67)
+  );
+  color: black;
 }
 
-/* thanh toán */
-.checkout-order {
+/* Payment -- CSS component--- Checkout.jsx*/
+
+.checkout-order .banner-checkout {
+  padding-top: 150px;
   background-image: linear-gradient(
       to left top,
       rgba(243, 234, 225, 0.4) 50%,
@@ -147,17 +158,13 @@ tr.payment {
     ),
     url("../image/backgroundPayment.jpg");
   background-size: cover;
-  /* full backgroud*/
   background-position: center;
-  /*can giua background */
-  height: 60vh;
   text-align: center;
   box-shadow: inset 0 8px 8px -8px rgba(33, 32, 32, 0.5),
     inset 0 -10px 20px -10px rgb(0 0 0 / 30%);
+  width: 100%;
 }
-.checkout-order .banner-checkout {
-  padding-top: 150px;
-}
+
 .checkout-order .banner-checkout h3 {
   font-size: 72px;
   color: rgb(255, 123, 0);
@@ -173,4 +180,13 @@ tr.payment {
 }
 .checkout-order .banner-checkout h6:hover {
   color: rgb(255, 121, 18);
+}
+
+/* FORM CHECKOUT */
+.order h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgb(250, 111, 12);
+  margin-bottom: 50px;
 }

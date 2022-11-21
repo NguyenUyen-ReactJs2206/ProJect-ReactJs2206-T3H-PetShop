@@ -5,6 +5,7 @@ import SearchCat from "../component/cpnPageCat/SearchCat";
 import { menuCat } from "../helper/help";
 import "../css/pagecat.css";
 import InformationPet from "../component/cpnPageHome/InformationPet";
+import Footer from "../component/Footer";
 export default function Cats({
   selectedCat,
   onSelectCat,
@@ -24,7 +25,6 @@ export default function Cats({
   };
 
   useEffect(() => {
-    console.log(selectedCat, "selectedCat");
     const result = listCat.filter(
       (el) =>
         (el.typeOf === selectedCat &&
@@ -38,11 +38,14 @@ export default function Cats({
   return (
     <>
       {" "}
-      <div className="page-cat">
+      <div className="page-cats">
         {showInformationProduct ? (
           <>
             {" "}
+            <div className="title-page-dog">
+            {" "}
             <h3>HELLO. I'M CAT!</h3>
+          </div>
             <SearchCat
               inputCat={inputCat}
               onSearchCat={onSearchCat}
@@ -64,6 +67,7 @@ export default function Cats({
           />
         )}
       </div>
+      <Footer/>
     </>
   );
 }

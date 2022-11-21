@@ -1,6 +1,6 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import "../.././css/search.css";
+
 export default function SearchDog({
   onSearchDog,
   inputDog,
@@ -10,7 +10,6 @@ export default function SearchDog({
 }) {
   return (
     <div>
-      <div className="wrapper">
         <div className="search-wrapper">
           <label htmlFor="search-form">
             <input
@@ -32,11 +31,11 @@ export default function SearchDog({
             >
               {selectedDog}
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu className="dropdown-menu">
               {menuDogs.length > 0 &&
                 menuDogs.map((Val, id) => {
                   return (
-                    <Dropdown.Item onClick={() => onSelectDog(Val)} key={id}>
+                    <Dropdown.Item className="dropdown-item" onClick={() => onSelectDog(Val)} key={id}>
                       {Val}
                     </Dropdown.Item>
                   );
@@ -45,6 +44,5 @@ export default function SearchDog({
           </Dropdown>
         </div>
       </div>
-    </div>
   );
 }
