@@ -12,7 +12,7 @@ export default function SignUp({ setShowForm }) {
               <h2>SIGN UP</h2>
               <form action="">
                 <div className="input-form">
-                  <span>Name</span>
+                  <span>UserName</span>
                   <input type="text" name="name" />
                 </div>
                 <div className="input-form">

@@ -1,6 +1,9 @@
 import React from "react";
 import { FaFacebook, FaGoogle, FaTiktok, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+// import { useForm } from "react-hook-form";
+// import { FIELD_FORM_LOGIN } from "../../helper/constants";
+// import styled from "styled-components";
 
 export default function LogIn({ setShowForm }) {
   return (
@@ -10,7 +13,7 @@ export default function LogIn({ setShowForm }) {
           <div className="form-content">
             <div className="form">
               <h2>LOG IN</h2>
-              <form action="">
+              <form>
                 <div className="input-form">
                   <span>Email</span>
                   <input type="text" name="email" />
@@ -22,7 +25,7 @@ export default function LogIn({ setShowForm }) {
                 <div className="remember-to-login">
                   <label>
                     <input type="checkbox" name="remember-to-login" />
-                    Remember to login
+                    Show Password
                   </label>
                 </div>
                 <div className="input-form">
@@ -54,7 +57,6 @@ export default function LogIn({ setShowForm }) {
               </ul>
             </div>
           </div>
-          {/* <!--Kết Thúc Phần Nội Dung--> */}
         </section>
       </div>
     </div>
