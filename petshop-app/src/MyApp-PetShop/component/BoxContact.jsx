@@ -16,7 +16,7 @@ export default function BoxContact({ showContact, setShowContact }) {
       <div className="box-contact">
         <ul className="list-contact">
           <li className="contact-phone" onClick={() => setShowContact(false)}>
-            <Link to="/contact">
+            <Link to="/">
               <FaPhone className="phone" />
             </Link>
           </li>
@@ -24,7 +24,7 @@ export default function BoxContact({ showContact, setShowContact }) {
             className="contact-facebook"
             onClick={() => setShowContact(false)}
           >
-            <Link to="/contact">
+            <Link to="/">
               <FaFacebook className="facebook" />
             </Link>
           </li>
@@ -32,17 +32,17 @@ export default function BoxContact({ showContact, setShowContact }) {
             className="contact-instagram"
             onClick={() => setShowContact(false)}
           >
-            <Link to="/contact">
+            <Link to="/">
               <FaInstagramSquare className="instagram" />
             </Link>
           </li>
           <li className="contact-twitter" onClick={() => setShowContact(false)}>
-            <Link to="/contact">
+            <Link to="/">
               <FaTwitter className="twitter" />
             </Link>
           </li>
           <li className="contact-tiktok" onClick={() => setShowContact(false)}>
-            <Link to="/contact">
+            <Link to="/">
               <FaTiktok className="tiktok" />
             </Link>
           </li>

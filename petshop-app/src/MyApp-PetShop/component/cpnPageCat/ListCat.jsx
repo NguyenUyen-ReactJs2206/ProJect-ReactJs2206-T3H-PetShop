@@ -32,7 +32,7 @@ export default function ListCat({
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
-                      Price Current: {item.priceCurrent}$
+                      Price Current: ${item.priceCurrent}
                     </span>
                   </Card.Title>
                 </Card.Body>

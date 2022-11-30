@@ -2,7 +2,7 @@ export const listDog = [
   {
     id: 1,
     typeOf: "Alaska",
-    name: "ALASKA NGÁO",
+    name: "ALASKA SO LOVELY",
     priceOld: 400,
     priceCurrent: 350,
     url: "http://thucanhviet.com/wp-content/uploads/2017/09/cho-alaska-mau-nau-do.jpg",

@@ -56,8 +56,8 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
       setDogs(resultFilterDog);
       setPaginationDog({
         ...paginationDog,
-        currentPageCat: PAGINATION_DOG.CURRENT_PAGE_DOG,
-        totalPageCat: Math.ceil(
+        currentPageDog: PAGINATION_DOG.CURRENT_PAGE_DOG,
+        totalPageDog: Math.ceil(
           resultFilterDog.length / PAGINATION_DOG.LIMIT_DOG
         ),
       });
@@ -149,7 +149,7 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
-                      Price Current: {item.priceCurrent}$
+                      Price Current: ${item.priceCurrent}
                     </span>
                   </Card.Title>
                 </Card.Body>
@@ -169,12 +169,12 @@ export default function AllDog({ onClickAddCart, onHandleShowInfomationDog }) {
               </Button>
             </div>
           ))}
-          <PaginationDog
-            onChangePageDog={onChangePageDog}
-            totalPageDog={paginationDog.totalPageDog}
-            currentPageDog={paginationDog.currentPageDog}
-          />
         </div>
+        <PaginationDog
+          onChangePageDog={onChangePageDog}
+          totalPageDog={paginationDog.totalPageDog}
+          currentPageDog={paginationDog.currentPageDog}
+        />
       </div>
     </div>
   );

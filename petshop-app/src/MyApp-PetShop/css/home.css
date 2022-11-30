@@ -225,7 +225,6 @@
     rgba(112, 112, 112, 0.08) 0px 16px 8px,
     rgba(137, 137, 137, 0.04) 0px 32px 16px;
   width: fit-content;
-  width: auto;
   height: auto;
 }
 .pagination-prev,

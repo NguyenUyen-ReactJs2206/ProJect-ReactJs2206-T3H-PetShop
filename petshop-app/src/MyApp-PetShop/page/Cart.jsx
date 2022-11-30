@@ -7,14 +7,16 @@ import "../css/pagecart.css";
 export default function Cart({ cartItems, setCartItems }) {
   //state show
   const [showContent, setShowContent] = useState(true);
-
+  //d là 1 nếu click +
+  //d là -1 nếu click -
+  //ind là vị trí của sp
   //increase and decrease items
   const handleChange = (item, d) => {
     const ind = cartItems.indexOf(item);
     const arrCartItems = cartItems;
-    // console.log(arrCartItems, "arrCartItems");
+    
     arrCartItems[ind].amount += d;
-    // console.log(arrCartItems[ind], "arrCartItems[ind]");
+  
     if (arrCartItems[ind].amount === 0) return (arrCartItems[ind].amount = 1);
     setCartItems([...arrCartItems]);
   };
@@ -49,8 +51,8 @@ export default function Cart({ cartItems, setCartItems }) {
 
   return (
     <>
-     <div className="page-cart">
-      {showContent ? (
+      <div className="page-cart">
+        {showContent ? (
           <ShopCart
             cartItems={cartItems}
             handleChange={handleChange}
@@ -61,9 +63,14 @@ export default function Cart({ cartItems, setCartItems }) {
             showContent={showContent}
             setShowContent={setShowContent}
           />
-      ) : (
-        <Checkout cartItems={cartItems} setShowContent={setShowContent}  totalPayment={totalPayment}/>
-      )}
+        ) : (
+          <Checkout
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+            setShowContent={setShowContent}
+            totalPayment={totalPayment}
+          />
+        )}
       </div>
       <Footer />
     </>

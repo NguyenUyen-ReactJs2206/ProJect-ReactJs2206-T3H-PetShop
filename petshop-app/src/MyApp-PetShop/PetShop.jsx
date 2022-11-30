@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import Dogs from "./page/Dogs";
 import Cats from "./page/Cats";
-import Navbar from "./component/Navbar";
-import { menuCat, menuDog } from "./helper/help";
 import Cart from "./page/Cart";
 import AboutUs from "./page/AboutUs";
 import User from "./page/User";
+import Navbar from "./component/Navbar";
+import { menuCat, menuDog } from "./helper/help";
 import { listCat, listDog } from "./api";
 import BoxContact from "./component/BoxContact";
 
@@ -65,15 +65,9 @@ export default function PetShop() {
           countCartItems={cartItems.length}
           setShowInformationProduct={setShowInformationProduct}
         />
-        <BoxContact/>
+        <BoxContact />
         <Routes>
-          <Route
-            path="/contact"
-            element={
-              <BoxContact
-              />
-            }
-          ></Route>
+          <Route path="/contact" element={<BoxContact />}></Route>
           <Route
             path="/"
             element={

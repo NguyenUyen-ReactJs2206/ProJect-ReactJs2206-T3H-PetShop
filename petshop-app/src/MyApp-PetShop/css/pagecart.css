@@ -5,12 +5,9 @@
   font-size: 18px;
 }
 /* CSS COMPONENT -- Shopcart.jsx */
-.page-cart-inclue {
-  padding-top: 50px;
-}
 .page-cart {
   height: fit-content;
-  margin-bottom: 50px;
+  margin-bottom: 250px;
 }
 .checkout-cart-title {
   width: auto;
@@ -148,7 +145,9 @@ td.number_toltal-payment {
 }
 
 /* Payment -- CSS component--- Checkout.jsx*/
-
+.checkout-order {
+  margin-bottom: 300px;
+}
 .checkout-order .banner-checkout {
   padding-top: 150px;
   background-image: linear-gradient(
@@ -169,7 +168,7 @@ td.number_toltal-payment {
   font-size: 72px;
   color: rgb(255, 123, 0);
 }
-.checkout-order .banner-checkout h6 {
+.banner-checkout h6.come-back-cart {
   font-size: 20px;
   text-align: start;
   margin-top: 160px;
@@ -177,11 +176,11 @@ td.number_toltal-payment {
   cursor: pointer;
   text-decoration: underline;
   color: rgb(255, 159, 5);
+  font-weight: 600;
 }
-.checkout-order .banner-checkout h6:hover {
-  color: rgb(255, 121, 18);
+.checkout-order h6.come-back-cart:hover {
+  color: rgb(241, 105, 1);
 }
-
 /* FORM CHECKOUT */
 .order h2 {
   text-align: center;
@@ -190,3 +189,5 @@ td.number_toltal-payment {
   color: rgb(250, 111, 12);
   margin-bottom: 50px;
 }
+
+/* Your Order*/

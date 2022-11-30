@@ -36,7 +36,7 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
   const onHandleSearchCat = (keySearchFilter) => {
     setInputFilterCat(keySearchFilter);
 
-    let listCatFilter = [...cats];
+    let listCatFilter = [...listCat];
     let resultFilterCat = [];
     if (keySearchFilter === "") {
       setCats(listCat);
@@ -146,7 +146,7 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
                     <span className="card_pet-oldprice">{item.priceOld}</span>
                     <br />
                     <span className="card_pet-newprice">
-                      Price Current: {item.priceCurrent}$
+                      Price Current: ${item.priceCurrent}
                     </span>
                   </Card.Title>
                 </Card.Body>
@@ -166,12 +166,12 @@ export default function AllCat({ onClickAddCart, onHandleShowInfomationCat }) {
               </Button>
             </div>
           ))}{" "}
-          <PaginationCat
+        </div>
+        <PaginationCat
             onChangePageCat={onChangePageCat}
             totalPageCat={paginationCat.totalPageCat}
             currentPageCat={paginationCat.currentPageCat}
           />
-        </div>
       </div>
     </div>
   );

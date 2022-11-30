@@ -4,7 +4,7 @@
   padding: 0;
 }
 .page-user {
-  padding-top: 50px;
+  padding-top: 80px;
   text-align: end;
   margin-top: 20px;
   margin-right: 20px;
@@ -19,7 +19,7 @@
 .page-user a:hover {
   color: rgb(255, 147, 6);
 }
-.form-login {
+.form-login,.form-signup {
   background-size: cover;
   /* full backgroud*/
   background-position: center;
@@ -27,10 +27,11 @@
   object-fit: cover;
   background-image: linear-gradient(
       to left top,
-      rgba(0, 0, 0, 0.8) 40%,
-      rgba(66, 199, 247, 0.666)
+      rgba(204, 204, 204, 0.9) 40%,
+      rgba(255, 255, 255, 0.8)
     ),
     url("../image/backgroundUser.jpg");
+    border-radius: 20px;
 }
 
 .form-login-email,
@@ -56,15 +57,13 @@ section .form-content .form {
   width: 80%;
 }
 section .form-content .form h2 {
-  color: rgb(255, 123, 28, 0.7);
+  color: rgb(255, 123, 28, 0.9);
   font-weight: 600;
   font-size: 3em;
   text-transform: uppercase;
   margin-bottom: 20px;
   border-bottom: 4px solid rgb(247, 119, 0, 0.7);
-  /* gạch chân vừa với chữ */
   display: inline-block;
-  /* khoảng cách giữa các chữ */
   letter-spacing: 1px;
 }
 section .form-content .form .input-form {
@@ -72,9 +71,9 @@ section .form-content .form .input-form {
 }
 section .form-content .form .input-form span {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: inline-block;
-  color: rgb(245, 242, 242, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   letter-spacing: 1px;
 }
 section .form-content .form .input-form input {
@@ -84,13 +83,14 @@ section .form-content .form .input-form input {
   border: 1px solid rgb(255, 123, 0);
   font-size: 16px;
   letter-spacing: 1px;
-  color: rgb(245, 242, 242, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   background: transparent;
   border-radius: 20px;
 }
 section .form-content .form .input-form input[type="submit"] {
   background: rgb(255, 123, 0, 0.8);
-  color: #fff;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
   outline: none;
   border: none;
   font-weight: 500;
@@ -104,17 +104,17 @@ section .form-content .form .input-form input[type="submit"]:hover {
 }
 section .form-content .form .remember-to-login {
   margin-bottom: 10px;
-  color: rgb(245, 242, 242, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   font-size: 14px;
 }
 section .form-content .form .input-form p {
-  color: rgb(245, 242, 242, 0.9);
+  color: rgba(0, 0, 0, 0.9);
 }
 section .form-content .form .input-form p a {
   color: rgb(246, 106, 7);
 }
 section .form-content .form h3 {
-  color: rgb(245, 242, 242, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-align: center;
   margin: 30px 0 10px;
   font-weight: 500;
@@ -135,10 +135,6 @@ section .form-content .form .icon-login li {
   font-size: 20px;
   border: 1px solid;
   border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-    0 16px 16px rgba(0, 0, 0, 0.12);
 }
 section .form-content .form .icon-login li:nth-child(1) {
   color: #3b5999;
